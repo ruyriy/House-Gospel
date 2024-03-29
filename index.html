@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -28,6 +28,48 @@ http://www.tooplate.com/view/2099
 
 <!-- MAIN CSS -->
 <link rel="stylesheet" href="css/tooplate-style.css">
+
+<style>
+.gallery-container {
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.gallery {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.gallery img {
+    width: 300px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+</style>
+
+
 
 </head>
 <body>
@@ -299,6 +341,10 @@ http://www.tooplate.com/view/2099
      </div>
 </section>
 
+<button class="prev">&#10094;</button>
+<button class="next">&#10095;</button>
+
+
 
 <!-- CONTACT -->
 <section id="contact" class="parallax-section">
@@ -406,6 +452,22 @@ http://www.tooplate.com/view/2099
 <script src="js/modernizr.custom.js"></script>
 <script src="js/smoothscroll.js"></script>
 <script src="js/custom.js"></script>
+
+<script>
+document.querySelector('.prev').addEventListener('click', function() {
+    document.querySelector('.gallery-container').scrollBy({
+        left: -200,
+        behavior: 'smooth'
+    });
+});
+
+document.querySelector('.next').addEventListener('click', function() {
+    document.querySelector('.gallery-container').scrollBy({
+        left: 200,
+        behavior: 'smooth'
+    });
+});
+</script>
 
 </body>
 </html>
