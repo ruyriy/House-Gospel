@@ -29,47 +29,22 @@ http://www.tooplate.com/view/2099
 <!-- MAIN CSS -->
 <link rel="stylesheet" href="css/tooplate-style.css">
 
-<style>
-.gallery-container {
-    position: relative;
-    overflow-x: auto;
-    white-space: nowrap;
-}
+   <style>
+	.submenu {
+    	 display: none;
+   }
 
-.gallery {
-    display: inline-block;
-    white-space: nowrap;
-}
+        .my-custom-icon {
+         font-size: 10px; /* Установите нужный размер */
+         font-weight: normal;  /* Установите нужный вес шрифта */
+   }
 
-.gallery img {
-    width: 300px;
-    height: auto;
-    margin-right: 10px;
-}
+   
+   .submenu a {
+    text-decoration: none;
+   }
 
-.prev,
-.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1;
-}
-
-.prev {
-    left: 0;
-}
-
-.next {
-    right: 0;
-}
 </style>
-
-
 
 </head>
 <body>
@@ -85,30 +60,37 @@ http://www.tooplate.com/view/2099
 <!-- MENU -->
 <div class="navbar custom-navbar navbar-fixed-top" role="navigation">
      <div class="container">
-
-          <!-- NAVBAR HEADER -->
           <div class="navbar-header">
                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon icon-bar"></span>
                     <span class="icon icon-bar"></span>
                     <span class="icon icon-bar"></span>
                </button>
-               <!-- lOGO -->
                <a href="index.html" class="navbar-brand">Служіние в вірі це Шлях до Богу</a>
           </div>
-
-          <!-- MENU LINKS -->
           <div class="collapse navbar-collapse">
                <ul class="nav navbar-nav navbar-right">
                     <li><a href="#home" class="smoothScroll">Головна</a></li>
-                    <li><a href="#about" class="smoothScroll">Відеозаписи</a></li>
+                    <li>
+                        <a href="#about" class="smoothScroll">
+                            Відеозаписи <i class="fa fa-chevron-down my-custom-icon"></i>
+                        </a>
+                        <!-- Всплывающее меню -->
+                        <ul class="submenu">
+                            <li><a href="новая_запись.html">Нова запис</a></li>
+                            <li><a href="открыть_видео.html">Відкрити відео</a></li>
+                            <li><a href="редактировать_видео.html">Редагувати відео</a></li>
+                            <li><a href="выход.html">Вихід</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#team" class="smoothScroll">Наші люди</a></li>  
                     <li><a href="#contact" class="smoothScroll">Давай поговоримо</a></li>
                </ul>
           </div>
-
      </div>
 </div>
+
+
 
 
 <!-- HOME -->
@@ -239,10 +221,6 @@ http://www.tooplate.com/view/2099
                          </a>
                     </div>
                </div>  
-
-
-
-
           </div>
      </div>
 </section>
@@ -273,7 +251,7 @@ http://www.tooplate.com/view/2099
                                    </ul>
                               </div>
                          </div>
-                         <p>Пастер Микола Павлович</p>
+                         <p>Пастер - Микола Павлович</p>
                          <h3>Пастер Церкви</h3>
                     </div>
 
@@ -340,10 +318,6 @@ http://www.tooplate.com/view/2099
           </div>
      </div>
 </section>
-
-<button class="prev">&#10094;</button>
-<button class="next">&#10095;</button>
-
 
 
 <!-- CONTACT -->
@@ -454,20 +428,41 @@ http://www.tooplate.com/view/2099
 <script src="js/custom.js"></script>
 
 <script>
-document.querySelector('.prev').addEventListener('click', function() {
-    document.querySelector('.gallery-container').scrollBy({
-        left: -200,
-        behavior: 'smooth'
-    });
+// Найти элемент меню "Відеозаписи"
+var videoMenu = document.querySelector('a[href="#about"]');
+
+// Найти всплывающее меню
+var submenu = document.querySelector('.submenu');
+
+// Показать всплывающее меню при наведении курсора на элемент меню
+videoMenu.addEventListener('mouseover', function() {
+    submenu.style.display = 'block';
 });
 
-document.querySelector('.next').addEventListener('click', function() {
-    document.querySelector('.gallery-container').scrollBy({
-        left: 200,
-        behavior: 'smooth'
-    });
+// Скрыть всплывающее меню при уходе курсора с элемента меню или всплывающего меню
+videoMenu.addEventListener('mouseleave', function() {
+    // Задержка перед скрытием меню, чтобы пользователь мог случайно вернуться к нему
+    setTimeout(function() {
+        // Проверяем, находится ли курсор мыши на всплывающем меню
+        if (!submenu.matches(':hover')) {
+            submenu.style.display = 'none';
+        }
+    }, 200); // Задержка в миллисекундах (можно изменить по желанию)
+});
+
+// Показать всплывающее меню при входе курсора в него
+submenu.addEventListener('mouseenter', function() {
+    submenu.style.display = 'block';
+});
+
+// Скрыть всплывающее меню при выходе курсора из него
+submenu.addEventListener('mouseleave', function() {
+    submenu.style.display = 'none';
 });
 </script>
+
+
+
 
 </body>
 </html>
