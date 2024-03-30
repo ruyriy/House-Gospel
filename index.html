@@ -426,13 +426,27 @@ http://www.tooplate.com/view/2099
 <script src="js/modernizr.custom.js"></script>
 <script src="js/smoothscroll.js"></script>
 <script src="js/custom.js"></script>
-
 <script>
 // Найти элемент меню "Відеозаписи"
 var videoMenu = document.querySelector('a[href="#about"]');
 
 // Найти всплывающее меню
 var submenu = document.querySelector('.submenu');
+
+// Показать или скрыть всплывающее меню при нажатии на элемент меню "Відеозаписи"
+videoMenu.addEventListener('click', function(event) {
+    // Предотвратить переход по ссылке
+    event.preventDefault();
+    
+    // Проверить текущее состояние всплывающего меню
+    if (submenu.style.display === 'block') {
+        // Если меню открыто, то закрыть его
+        submenu.style.display = 'none';
+    } else {
+        // Если меню закрыто, то открыть его
+        submenu.style.display = 'block';
+    }
+});
 
 // Показать всплывающее меню при наведении курсора на элемент меню
 videoMenu.addEventListener('mouseover', function() {
@@ -460,8 +474,6 @@ submenu.addEventListener('mouseleave', function() {
     submenu.style.display = 'none';
 });
 </script>
-
-
 
 
 </body>
