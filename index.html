@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-<title>Служіння в вірі це Шлях до Богу</title>
+<title>Источник Веры: Христианский Ресурс</title>
 
 <!--
 
@@ -29,20 +29,62 @@ http://www.tooplate.com/view/2099
 <!-- MAIN CSS -->
 <link rel="stylesheet" href="css/tooplate-style.css">
 
-   <style>
-	.submenu {
-    	 display: none;
-   }
 
-        .my-custom-icon {
-         font-size: 10px; /* Установите нужный размер */
-         font-weight: normal;  /* Установите нужный вес шрифта */
-   }
+<style>
+.text-logo {
+    /* Стили для текстового логотипа */
+}
 
-   
-   .submenu a {
-    text-decoration: none;
-   }
+.image-logo {
+    /* Стили только для изображения логотипа */
+    border-radius: 50%; /* Делаем изображение круглым */
+    background-color: transparent; /* Скрываем фон */
+    width: 100px; /* Задаем ширину изображения */
+    height: 100px; /* Задаем высоту изображения */
+    overflow: hidden; /* Скрываем часть изображения, выходящую за границы круга */
+    opacity: 0.5; /* Делаем логотип полупрозрачным */
+    transition: opacity 0.5s ease; /* Добавляем плавный эффект перехода */
+    position: fixed; /* Фиксируем позицию логотипа */
+    top: 20px; /* Устанавливаем верхнее смещение */
+    left: 20px; /* Устанавливаем левое смещение */
+    z-index: 1000; /* Устанавливаем z-index, чтобы логотип был поверх других элементов */
+}
+
+
+.vertical-menu {
+  
+  padding: 20px; /* Внутренние отступы для контейнера */
+}
+
+
+.vertical-menu ul {
+  list-style: none; /* Убираем маркеры списка */
+  padding: 0; /* Убираем внутренние отступы */
+}
+
+.vertical-menu li {
+  margin-bottom: 10px; /* Отступ между пунктами меню */
+}
+
+.vertical-menu li a {
+  color: #000000; /* цвет текста */
+  
+  font-size: 22px; /* Размер шрифта */
+ 
+  line-height: 1.8; /* Межстрочный интервал */
+  
+}
+
+
+
+
+#video {
+  padding-top: 50px; /* Подобный отступ как в разделе "ABOUT" */
+  padding-bottom: 250px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+
 
 </style>
 
@@ -60,37 +102,41 @@ http://www.tooplate.com/view/2099
 <!-- MENU -->
 <div class="navbar custom-navbar navbar-fixed-top" role="navigation">
      <div class="container">
+
+          <!-- NAVBAR HEADER -->
           <div class="navbar-header">
                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon icon-bar"></span>
                     <span class="icon icon-bar"></span>
                     <span class="icon icon-bar"></span>
                </button>
-               <a href="index.html" class="navbar-brand">Служіння в вірі це Шлях до Богу</a>
+               
+               <!-- lOGO -->
+           <!-- Текстовый логотип -->
+		<a href="index.html" class="navbar-brand">
+    		<span class="text-logo">Служіння в вірі, це Шлях до Богу</span>
+		</a>
+
+		<!-- Изображенческий логотип -->
+		<a href="index.html" class="navbar-brand" id="logo">
+    		<img src="images\logo.jpg" alt="..." class="image-logo">
+		</a>
+ 
           </div>
+
+          <!-- MENU LINKS -->
           <div class="collapse navbar-collapse">
                <ul class="nav navbar-nav navbar-right">
                     <li><a href="#home" class="smoothScroll">Головна</a></li>
-                    <li>
-                        <a href="#about" class="smoothScroll">
-                            Відеозаписи <i class="fa fa-chevron-down my-custom-icon"></i>
-                        </a>
-                        <!-- Всплывающее меню -->
-                        <ul class="submenu">
-                            <li><a href="новая_запись.html">Нові записи</a></li>
-                            <li><a href="открыть_видео.html">Відкрити відео</a></li>
-                            <li><a href="редактировать_видео.html">Редагувати відео</a></li>
-                            <li><a href="выход.html">Вихід</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#about" class="smoothScroll">О нашій Церкві</a></li>
+                    <li><a href="#video" class="smoothScroll">Відео Бого-служінь</a></li>
                     <li><a href="#team" class="smoothScroll">Наші люди</a></li>  
                     <li><a href="#contact" class="smoothScroll">Давай поговоримо</a></li>
                </ul>
           </div>
+
      </div>
 </div>
-
-
 
 
 <!-- HOME -->
@@ -112,11 +158,13 @@ http://www.tooplate.com/view/2099
           </div>
      </div>
 
-     <!-- Video -->
+
+    <!-- Video -->
      <video controls="" autoplay="" loop="" muted>
           <source src="videos/video.mp4" type="video/mp4">
           Your browser does not support the video tag.
      </video>
+
 </section>
 
 
@@ -128,7 +176,7 @@ http://www.tooplate.com/view/2099
                <div class="col-md-offset-1 col-md-10 col-sm-12">
                     <div class="about-info">
                          <h3>НАШЕ СЛУЖІННЯ В ЦЕРКВІ, ЯК ХРИСТОС СЛУЖИВ НАМ</h3>
-                         <h1>Не залишайтеся на самоті - відкрийте для себе нескінченний океан мудрості, що прихований у кожному записі слова..</h1>
+                         <h1>Не залишайтеся на єдині - відкрийте для себе нескінченний океан мудрості, що прихований у кожному записі слова..</h1>
                     </div>
                </div>
 
@@ -209,7 +257,7 @@ http://www.tooplate.com/view/2099
                <div class="col-md-6 col-sm-6">
                     <!-- PROJECT ITEM -->
                     <div class="project-item">
-                         <a href="images/project-image4.jpg" class="image-popup">
+                         <a href="images/project-image5.jpg" class="image-popup">
                               <img src="images/project-image5.jpg" class="img-responsive" alt="">
                          
                               <div class="project-overlay">
@@ -221,6 +269,70 @@ http://www.tooplate.com/view/2099
                          </a>
                     </div>
                </div>  
+          
+               <div class="col-md-6 col-sm-6">
+                    <!-- PROJECT ITEM -->
+                    <div class="project-item">
+                         <a href="images/project-image6.jpg" class="image-popup">
+                              <img src="images/project-image6.jpg" class="img-responsive" alt="">
+                         
+                              <div class="project-overlay">
+                                   <div class="project-info">
+                                        <h1>Пастори нашого союзу</h1>
+                                        <h3>Pastors of our union</h3>
+                                   </div>
+                              </div>
+                         </a>
+                    </div>
+               </div>
+
+
+
+              <div class="col-md-6 col-sm-6">
+                    <!-- PROJECT ITEM -->
+                    <div class="project-item">
+                         <a href="images/project-image7.jpg" class="image-popup">
+                              <img src="images/project-image7.jpg" class="img-responsive" alt="">
+                         
+                              <div class="project-overlay">
+                                   <div class="project-info">
+                                        <h1>Руко-покладання. Воно свідчить про те, що Бог виявляє у церкві нових служителів і кличе їх до особливої праці.</h1>
+                                        <h3>Laying on of hands</h3>
+                                   </div>
+                              </div>
+                         </a>
+                    </div>
+               </div>
+
+
+	</div>
+     </div>
+</section>
+
+
+<!-- VIDEO -->
+<section id="video" class="parallax-section">
+     <div class="container">
+          <div class="row">
+               <div class="col-md-offset-1 col-md-10 col-sm-12">                    
+		    <div class="section-title">
+                        <h1>Відеозаписи</h1> 
+                         <ul class="vertical-menu">
+     			 <li><a href="worship.html">Відеозаписи Богослужінь</a></li>
+      			 <li><a href="sermons.html">Проповіді наших братів</a></li>
+      			 <li><a href="music.html">Музичне служіння (хор)</a></li>
+      			 <li><a href="children.html">Дитяче служіння</a></li>
+      			 <li><a href="youth.html">Молодіжне служіння</a></li>
+      			 <li><a href="radio.html">Онлайн радіо</a></li>
+
+
+                         <ul class="section-btn">
+                              <a href="#" class="smoothScroll"><span data-hover="ГОЛОВНА">ГОЛОВНА</span></a>
+                         </ul>
+
+                         </ul>
+                    </div>
+               </div>
           </div>
      </div>
 </section>
@@ -251,7 +363,7 @@ http://www.tooplate.com/view/2099
                                    </ul>
                               </div>
                          </div>
-                         <p>Пастер - Микола Павлович</p>
+                         <p>Пастер Микола Павлович</p>
                          <h3>Пастер Церкви</h3>
                     </div>
 
@@ -426,55 +538,19 @@ http://www.tooplate.com/view/2099
 <script src="js/modernizr.custom.js"></script>
 <script src="js/smoothscroll.js"></script>
 <script src="js/custom.js"></script>
+
 <script>
-// Найти элемент меню "Відеозаписи"
-var videoMenu = document.querySelector('a[href="#about"]');
-
-// Найти всплывающее меню
-var submenu = document.querySelector('.submenu');
-
-// Показать или скрыть всплывающее меню при нажатии на элемент меню "Відеозаписи"
-videoMenu.addEventListener('click', function(event) {
-    // Предотвратить переход по ссылке
-    event.preventDefault();
-    
-    // Проверить текущее состояние всплывающего меню
-    if (submenu.style.display === 'block') {
-        // Если меню открыто, то закрыть его
-        submenu.style.display = 'none';
+window.addEventListener('scroll', function() {
+    var imageLogo = document.querySelector('.image-logo');
+    if (window.scrollY === 0) {
+        imageLogo.style.display = 'block'; // Показываем изображение логотипа, если страница находится в начальном положении
     } else {
-        // Если меню закрыто, то открыть его
-        submenu.style.display = 'block';
+        imageLogo.style.display = 'none'; // Скрываем изображение логотипа, если страница прокручена
     }
 });
 
-// Показать всплывающее меню при наведении курсора на элемент меню
-videoMenu.addEventListener('mouseover', function() {
-    submenu.style.display = 'block';
-});
 
-// Скрыть всплывающее меню при уходе курсора с элемента меню или всплывающего меню
-videoMenu.addEventListener('mouseleave', function() {
-    // Задержка перед скрытием меню, чтобы пользователь мог случайно вернуться к нему
-    setTimeout(function() {
-        // Проверяем, находится ли курсор мыши на всплывающем меню
-        if (!submenu.matches(':hover')) {
-            submenu.style.display = 'none';
-        }
-    }, 200); // Задержка в миллисекундах (можно изменить по желанию)
-});
-
-// Показать всплывающее меню при входе курсора в него
-submenu.addEventListener('mouseenter', function() {
-    submenu.style.display = 'block';
-});
-
-// Скрыть всплывающее меню при выходе курсора из него
-submenu.addEventListener('mouseleave', function() {
-    submenu.style.display = 'none';
-});
 </script>
-
 
 </body>
 </html>
