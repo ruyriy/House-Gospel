@@ -1,0 +1,860 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новая страница с меню</title>
+
+    <!-- Подключение стилей Bootstrap, вашего собственного файла стилей и стилей tooplate-style.css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/your-styles.css">
+    <link rel="stylesheet" href="css/tooplate-style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-...Значение хэша..." crossorigin="anonymous" />
+
+    
+<!-- Подключение скриптов jQuery и Bootstrap -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Ваши собственные скрипты -->
+    <script src="js/your-script.js"></script>
+    <script src="js/smoothscroll.js"></script>
+
+ 
+
+
+ <style>
+
+
+header {
+    background-color: #f8f9fa; /* Цвет фона шапки */
+    padding: 10px;
+}
+
+.logo {
+    position: absolute; /* Устанавливаем абсолютное позиционирование */
+    float: left; /* Логотип выравнивается слева */   
+    top: 50px; /* Отступ сверху 20 пикселей от верхнего края родительского контейнера */
+    opacity: 0.8; /* Прозрачность логотипа */
+}
+
+.logo img {
+   width: auto; /* Ширина логотипа */
+    height: auto; /* Автоматическая высота, чтобы сохранить пропорции */
+    opacity: 0.8; /* Прозрачность изображения логотипа */
+}
+
+
+
+
+
+/* Перемещаем всплывающие элементы меню влево */
+        .navbar-nav {
+            margin-left: auto;
+        }
+
+        /* Стиль для текста меню */
+        .navbar-nav > li > a {
+            font-family: 'Open Sans', sans-serif; /* Применяем выбранный шрифт */
+            font-weight: 400;
+            text-transform: uppercase; /* Преобразуем текст в верхний регистр */
+            font-size: 13px;
+            color: #fff !important; /* Цвет текста */
+            padding: 5px 10px; /* Отступы для элементов меню */
+        }
+
+        /* Убираем подсветку при наведении курсора мыши */
+        .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
+            background-color: transparent !important;
+        }
+
+        /* Убираем подсветку меню бургера при наведении курсора мыши */
+        .navbar-toggle:focus, .navbar-toggle:hover {
+            background-color: transparent !important;
+        }
+
+        /* Изменение цвета фона всего меню */
+        .navbar-inverse {
+            background-color: #4dc47d;
+        }
+
+        /* Цвет логотипа */
+        .navbar-inverse .navbar-brand {
+            color: #fff; /* Цвет логотипа */
+        }
+
+        /* Убираем обводы вокруг меню */
+        .navbar {
+            border: none;
+        }
+
+        /* Убираем обвод вокруг меню бургера */
+        .navbar-toggle {
+            border: none;
+        }
+
+        /* Вертикальные отступы для элементов меню на ПК */
+        .navbar-nav > li {
+            margin-top: 0px; /* Верхний отступ */
+            margin-bottom: 0px; /* Нижний отступ */
+        }      
+
+        /* Увеличение верхней панели меню по вертикали */
+        .navbar {
+            padding-top: 5px; /* Верхний отступ */
+            padding-bottom: 5px; /* Нижний отступ */
+        }
+
+        /* Убираем разделительную черту между верхней панелью и выпадающим меню в режиме мобильного */
+        .navbar-collapse {
+            border-top: none; /* Устанавливаем нулевую толщину границы */
+            background-color: #4dc47d; /* Цвет фона, соответствующий верхней панели */
+        }
+
+        .content {
+            padding: 20px;
+            margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+
+
+          /* Назначаем новый стиль для элементов с классом videoLink */
+        .videoLink {
+            font-family: 'Arial', sans-serif; /* Выбираем новый шрифт */
+            font-weight: 300; /* Устанавливаем более тонкий шрифт */
+            font-size: 16px; /* Размер шрифта */
+            color: #0000ff !important; /* Цвет текста */
+            color: #000000 !important; /* Чёрный цвет текста */
+        }
+
+        /* Стиль для изменения цвета текста при нажатии */
+        .videoLink:active {
+            color: #ff0000 !important; /* Цвет текста при активном состоянии */
+        }
+
+        /* Стиль для изменения цвета текста при наведении курсора мыши */
+        .videoLink:hover {
+            color: #00ff00 !important; /* Цвет текста при наведении */
+            cursor: pointer; /* Изменение курсора при наведении */
+        }
+
+
+#video1, #video2, #video3, #video4, #video5, #video6, #video7, #video8 {
+    border: 1px solid #4dc47d;
+    border-radius: 3px;
+    
+    max-width: 1100px;
+    margin: 20px auto; /* Внешние отступы для создания промежутка */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    /*background-color: #ffffff;  Цвет фона контейнера */
+    /* ИЛИ */
+    background-image: url('images/icon/icon4.jpg');  /* Использовать изображение в качестве фона */
+    background-size: cover;  /* Растягиваем изображение, чтобы оно покрывало всю область */
+}
+
+
+.video-icon {
+    border-radius: 10px; /* Округление углов изображения */
+    box-shadow: 10px 0 10px rgba(0, 0, 0, 0.5); /* Добавление тени справа */
+    transition: transform 0.3s ease; /* Плавное изменение размера при наведении */
+}
+
+.video-icon:hover {
+    transform: scale(1.3); /* Увеличение размера при наведении */
+}
+
+.content {
+    padding: 20px !important; /* Отступы внутри содержимого контейнера */
+}
+
+	.videoLink .videoNumber {
+    	    color: blue;  /*   red;Устанавливаем красный цвет для нумерации */
+	}
+
+       .selected-video {
+         background-color: #d1fbd2; /* Цвет фона для выбранной строки (светло- ) */
+        }
+
+/* CSS анимация для эффекта переворота */
+.flipAnimation {
+    animation: flipAnimation 4s ease; /* Применяем анимацию с переворотом */
+}
+
+@keyframes flipAnimation {
+    0% {
+        transform: rotateY(0deg); /* Начальное положение (без поворота) */
+    }
+    100% {
+        transform: rotateY(360deg); /* Завершающее положение (поворот на ... градусов) */
+    }
+}
+
+
+
+#about {
+    background-image: url('images/advertisement3.jpg'); /* Устанавливаем фоновое изображение */
+    background-size: cover; /* Масштабируем изображение по размеру контейнера */
+    background-position: center; /* Центрируем изображение */
+    background-repeat: no-repeat; /* Запрещаем повторение изображения */
+    padding: 150px 0; /* Добавляем внутренние отступы сверху и снизу для контента */
+}
+
+
+
+
+
+/* Стили для секции галереи */
+#gallery {
+    background-image: url('images/kul4.jpg'); /* Путь к изображению для фона */
+    background-size: cover; /* Масштабирование изображения по размеру блока */
+    background-position: center; /* Позиционирование изображения по центру */
+    background-repeat: no-repeat; /* Запрет повторения изображения */
+    padding: 160px 0; /* Вертикальные отступы */
+    border-radius: 5px; /* Закругленные углы */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8); /* Увеличенная тень */
+
+}
+
+/* Стили для заголовка секции */
+#gallery .section-title {
+    text-align: center; /* Выравнивание текста по центру */
+    margin-bottom: 50px; /* Нижний отступ */
+}
+
+/* Стили для элементов галереи */
+.gallery-item {
+    margin-bottom: 30px; /* Нижний отступ между элементами */
+    overflow: hidden; /* Предотвращаем выход изображения за пределы блока */
+    border-radius: 5px; /* Закругленные углы */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень */
+    transition: transform 0.3s ease-in-out; /* Анимация при наведении */
+}
+
+/* Стили для изображений в галерее */
+.gallery-item img {
+    width: 150px; /* Ширина изображения на всю ширину блока */
+    height: auto; /* Автоматическая высота */
+    display: block; /* Блочный элемент */
+    transition: transform 0.3s ease-in-out; /* Анимация при наведении */
+}
+
+/* Стили при наведении на элемент галереи */
+.gallery-item:hover {
+    transform: translateY(-5px); /* Смещение вверх при наведении */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Увеличенная тень */
+}
+.gallery-item:hover img {
+    transform: scale(1.05); /* Увеличение размера изображения при наведении */
+}
+
+.gallery-item {
+    position: relative; /* Чтобы подпись была относительно этого блока */
+    background-color: transparent; /* Прозрачный фон */
+
+}
+
+
+
+/* Скрыть контент при загрузке страницы */
+#page-content {
+    opacity: 0;
+}
+
+/* Анимация появления */
+.fade-in {
+    animation: fadeInAnimation 2s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+.caption {
+    position: absolute;
+    top: 50%; /* Располагаем подпись на половине высоты блока */
+    right: 0; /* Располагаем подпись справа */
+    transform: translateY(-50%); /* Сдвигаем подпись вверх на половину её высоты */
+    background-color: rgba(0, 0, 0, 0.7); /* Задаем цвет фона для подписи */
+    color: white; /* Задаем цвет текста для подписи */
+    padding: 5px 10px; /* Добавляем отступы вокруг текста */
+    font-size: 14px; /* Задаем размер шрифта для подписи */
+    white-space: nowrap; /* Предотвращаем перенос текста на новую строку */
+}
+
+
+
+
+  </style>
+
+
+
+
+</head>
+<body>
+
+
+<!-- MENU -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <div class="container">
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+ 
+        </div>
+
+        <div class="collapse navbar-collapse">
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#about" class="smoothScroll">Головна</a></li>
+                <li><a href="#gallery" class="smoothScroll">Галерея</a></li>
+                <li><a href="#video1" class="smoothScroll">Микола Марйоха</a></li>
+                <li><a href="#video2" class="smoothScroll">Андрій Міщенко</a></li>
+                <li><a href="#video3" class="smoothScroll">Андрій Булигін</a></li>
+                <li><a href="#video4" class="smoothScroll">Андрей Парфило</a></li>
+                <li><a href="#video5" class="smoothScroll">Александр Иванченко</a></li>
+                <li><a href="#video6" class="smoothScroll">Віктор Лаба</a></li>
+                <li><a href="#video7" class="smoothScroll">Віталій Зінченко</a></li>
+                <li><a href="#video8" class="smoothScroll">Сергей Комисар</a></li>
+
+
+            </ul>
+        </div><!--/.nav-collapse -->
+
+
+    </div>
+</div>
+
+<div id="page-content" class="fade-in">
+
+
+    <header>
+        <div class="logo">
+            <img src="images/logoV2.png" alt="Логотип">
+        </div>
+    </header>
+
+
+<!-- ABOUT -->
+<section id="about" class="parallax-section">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-offset-1 col-md-10 col-sm-12">
+                     <div class="about-info flipAnimation">
+                     <h4>Не залишайтеся на єдині - відкрийте для себе нескінченний океан мудрості, що прихований у кожному записі слова..</h3>
+                      <div style="font-size: 52px; font-weight: 80; color: red; text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8);">
+                         Якова 1:21 «Тому, відклавши всяку нечистоту та решту злості, прийміть у лагідності насаджуване слово, що може спасти ваші душі».
+                      </div>
+		      <ul class="section-btn">   
+   		         <a href="#gallery" class="smoothScroll"><span data-hover="Відкрий більше">Відкрий більше</span></a>                        
+		      </ul>
+
+		    </div>
+
+               </div>
+
+          </div>
+     </div>
+</section>
+
+</div>
+
+
+
+<!-- Gallery -->
+<section id="gallery" class="parallax-section">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="section-title">Галерея</h1>
+            </div>
+        </div>
+        <div class="row">
+	    <div class="col-md-4 col-sm-6">
+    		<div class="gallery-item">
+        	   <a href="#video1" class="smoothScroll">
+            	      <div class="image-container">
+                	 <img src="images/video1-icon.jpg" alt="Image 1">
+                       <div class="caption">(Просвітер) Марьйоха М. П.</div>
+                   </div>
+                 </a>
+               </div>
+	     </div>
+	    <div class="col-md-4 col-sm-6">
+    		<div class="gallery-item">
+        	   <a href="#video1" class="smoothScroll">
+            	      <div class="image-container">
+                	 <img src="images/video2-icon.jpg" alt="Image 2">
+                       <div class="caption">(Дьякон) Міщенко Андрій</div>
+                   </div>
+                 </a>
+               </div>
+	     </div
+	    <div class="col-md-4 col-sm-6">
+    		<div class="gallery-item">
+        	   <a href="#video3" class="smoothScroll">
+            	      <div class="image-container">
+                	 <img src="images/video3-icon.jpg" alt="Image 3">
+                         <div class="caption">(Дьякон) Булигін Андрій Петрович</div>
+                     </div>
+                  </a>
+               </div>
+	     </div
+            <!-- Добавьте дополнительные блоки с изображениями по аналогии -->
+
+	    <div class="col-md-4 col-sm-6">
+    		<div class="gallery-item">
+        	   <a href="#video4" class="smoothScroll">
+            	      <div class="image-container">
+                	 <img src="images/video4-icon.jpg" alt="Image 4">
+                       <div class="caption">(Дьякон) Парфіло Андрій</div>
+                    </div>
+                 </a>
+               </div>
+	     </div
+	    <div class="col-md-4 col-sm-6">
+  	    <div class="col-md-4 col-sm-6">
+    		<div class="gallery-item">
+        	   <a href="#video5" class="smoothScroll">
+            	      <div class="image-container">
+                	 <img src="images/video5-icon.jpg" alt="Image 5">
+                       <div class="caption">(Служитель) Иванченко Олександр</div>
+                   </div>
+                 </a>
+               </div>
+	     </div>
+
+	    <div class="col-md-4 col-sm-6">
+    		<div class="gallery-item">
+        	   <a href="#video6" class="smoothScroll">
+            	      <div class="image-container">
+                	 <img src="images/video6-icon.jpg" alt="Image 6">
+                       <div class="caption">(Служитель) Лаба Віктор Васильович.</div>
+                   </div>
+                 </a>
+               </div>
+	     </div>
+
+ 	    <div class="col-md-4 col-sm-6">
+    		<div class="gallery-item">
+        	   <a href="#video7" class="smoothScroll">
+            	      <div class="image-container">
+                	 <img src="images/video7-icon.jpg" alt="Image 7">
+                       <div class="caption">(Дьякон) Зінченко Олександр .</div>
+                   </div>
+                 </a>
+               </div>
+	     </div>
+
+ 	    <div class="col-md-4 col-sm-6">
+    		<div class="gallery-item">
+        	   <a href="#video8" class="smoothScroll">
+            	      <div class="image-container">
+                	 <img src="images/video8-icon.jpg" alt="Image 8">
+                       <div class="caption">(Служитель) Комісар Сергій.</div>
+                   </div>
+                 </a>
+               </div>
+
+	    </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+
+<!-- video1 -->
+<section id="video1" class="parallax-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10 col-sm-12">
+                <div class="content">                   
+
+<img src="images/video1-icon.jpg" alt="Иконка video1" width="210" height="120" class="video-icon">
+
+                    
+                    <h1>(Пастор) Марйоха М. П.</h1>
+		    <h5 id="currentVideoTitle">НАШЕ СЛУЖІННЯ В ЦЕРКВІ, ЯК ХРИСТОС СЛУЖИВ НАМ</h5>
+
+
+			<p class="videoLink" onclick="changeVideo('MRnut7NwyxE', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [1] Видео : </span> "Як жити у 2024 році?" (Филип'ян 1). Микола Марйоха, 01.01.2024</p>
+			<p class="videoLink" onclick="changeVideo('ruU4oQq9E7w', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [2] Видео : </span> "Хрещення як союз з Христом" (Марка 16:15-16). Микола Марйоха, 06.01.2024</p>
+			<p class="videoLink" onclick="changeVideo('7_dy__UI5XM', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [3] Видео : </span> "Вечеря Господня" (1Коринтян 11:23-26). Микола Марйоха, 07.01.2024</p>
+			<p class="videoLink" onclick="changeVideo('5rDaP3nhL0s', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [4] Видео : </span> "Блаженні чисті серцем" (Матвія 5:1-8). Микола Марйоха, 14.01.2024</p>
+			<p class="videoLink" onclick="changeVideo('pBYuaeI6aJ8', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [5] Видео : </span> "Христос - підтримка наша" (Євреїв 12:1). Микола Марйоха, 03.03.2024</p>
+			<p class="videoLink" onclick="changeVideo('e_R1j1xyY6A', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [6] Видео : </span> "Приклад у зціленні Неємана" (2 Царів 5:1-15). Микола Марйоха, 18.02.2024</p>
+			<p class="videoLink" onclick="changeVideo('MazuoUj3KXE', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [7] Видео : </span> "Блаженні миротворці" (Матвія 5). Микола Марйоха, 11.02.2024</p>
+			<p class="videoLink" onclick="changeVideo('ImmyvGKAH7M', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [8] Видео : </span> "Благодать благої вісті для язичників" (Еф. 3:8-9). Микола Марйоха, 28.01.2024</p>
+			<p class="videoLink" onclick="changeVideo('XlZ3O1G9x-0', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [9] Видео : </span> "Стрітення Господнє" (Лук. 25). Микола Марйоха, 02.02.2024 року</p>
+
+
+		    <div id="player1" class="player-container">
+                       <iframe class="player" src="" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- video2 -->
+<section id="video2" class="parallax-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10 col-sm-12">
+                <div class="content">
+<img src="images/video2-icon.jpg" alt="Иконка video2" width="210" height="120" class="video-icon">
+
+                    <h5>НАШЕ СЛУЖІННЯ В ЦЕРКВІ, ЯК ХРИСТОС СЛУЖИВ НАМ</h5>
+                    <h1>[  Андрій Міщенко  ]</h1>
+
+<p class="videoLink" onclick="changeVideo('F5OxGFIFeJY', 2, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [1] Видео : </span> "Невірство в Божого Сина" (Івана 5:16-24). Андрій Міщенко, 18.02.2024</p>
+<p class="videoLink" onclick="changeVideo('G_Jyd9J8vVs', 2, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [2] Видео : </span> "Значення Іванового хрещення" (Матвія 3:1-17). Андрій Міщенко, 06.01.2024</p>
+
+	<h4><span class="yearTitle">[Відео за 2023 рік]</span></h4>
+<p class="videoLink" onclick="changeVideo('3LsJRjCb69E', 2, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [3] Видео : </span> "Незмінність Бога" (Пс. 103:15-18). Андрій Міщенко, 26.11.2023</p>
+<p class="videoLink" onclick="changeVideo('JRXTMnQwVR0', 2, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [4] Видео : </span> "Наш Бог - Святий" (Ісаї 6:1-7). Андрій Міщенко, 12 березня 2023 року</p>
+<p class="videoLink" onclick="changeVideo('KsbnWKawsmI', 2, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [5] Видео : </span> "Всезнання та всюдиприсутність Бога" (Пс. 139). Андрій Міщенко, 29.10.2023</p>
+<p class="videoLink" onclick="changeVideo('zo8jh74k3cI', 2, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [6] Видео : </span> "Любов Бога" (1 Ів 4:7-12). Андрій Міщенко, 10 вересня 2023 року</p>
+<p class="videoLink" onclick="changeVideo('Tf_QHjkxDUM', 2, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [7] Видео : </span> "Доброта Бога" (Пс 136). Андрій Міщенко, 4 червня 2023 року</p>
+<p class="videoLink" onclick="changeVideo('rZkYQjL-pfI', 2, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [8] Видео : </span> Якості Бога. Божа праведність і справедливість (Псалом 118:137-144). Андрій Міщенко, 30 квітня 2023</p>
+
+
+
+
+                   <div id="player2" class="player-container">
+                        <iframe class="player" src="" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- video3 -->
+<section id="video3" class="parallax-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10 col-sm-12">
+                <div class="content">
+<img src="images/video3-icon.jpg" alt="Иконка video3" width="210" height="120" class="video-icon">
+
+                    <h5>НАШЕ СЛУЖІННЯ В ЦЕРКВІ, ЯК ХРИСТОС СЛУЖИВ НАМ</h5>
+                    <h1>Булигін Андрій Петрович</h1>
+
+
+
+<p class="videoLink" onclick="changeVideo('DfmXDjJz5SQ', 3, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [1] Відео : </span>"Пасхальне Ягня" (Вихід 12). Андрій Булигін, 28.03.2024  </p>
+<p class="videoLink" onclick="changeVideo('3ZkuZSKX8i4', 3, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [2] Відео : </span>"Джерело втіхи" (Псалом 3). Андрій Булигін, 10.03.2024  </p>
+<p class="videoLink" onclick="changeVideo('3ftNsnRX7aQ', 3, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [3] Відео : </span>"Чому Ти, Господи,далеко так?" (Псалом 10). Андрій Булигін, 25.02.2024  </p>
+<p class="videoLink" onclick="changeVideo('14bhoBVE7eY', 3, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [4] Відео : </span>"Праведність: Старий / Новий Завіт" (Лук. 2). Андрій Булигін, 02.02.2024  </p>
+<p class="videoLink" onclick="changeVideo('XU6BYo5nD5U', 3, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [5] Відео : </span>"Бог знає все і завжди поруч"(Пс. 139). Андрій Булигін, 28.01.2024  </p>
+<p class="videoLink" onclick="changeVideo('ZGzpFUygFmo', 3, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [6] Відео : </span>"Милість Господня" (Псалом 130). Андрій Булигін, 21.01.2024  </p>
+<p class="videoLink" onclick="changeVideo('kc_vrcOj2yo', 3, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [7] Відео : </span>"Ходімо у Господній храм!" (Псалом 122). Андрій Булигін, 01.01.2024  </p>
+<p class="videoLink" onclick="changeVideo('ZyKahgJId5M', 3, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [8] Відео : </span>"На чиєму ти боці?" (Пс. 110 (109). Андрій Булигін, 10.12.2023  </p>
+<p class="videoLink" onclick="changeVideo('fP-HGmyGc5M', 3, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [9] Відео : </span>"Конкретика в молитвах за Ізраїль" (Пс.83). Андрій Булигін, 19.11.2023  </p>
+<p class="videoLink" onclick="changeVideo('S_RMOKz5gos', 3, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [10] Відео : </span>"Сповіщайте про діла Господні" (Пс 105). Андрій Булигін, 13 серпня 2023 року  </p>
+<p class="videoLink" onclick="changeVideo('4zM5Q84jVaQ', 3, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [11] Відео : </span>"Технології обману. Як нам з цим жити?" (2-е до Солунян 2:1-12). Андрій Булигін, 16.07.2023  </p>
+<p class="videoLink" onclick="changeVideo('se0ACJZxcHY', 3, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [12] Відео : </span>"Господь - мій Пастир". Андрій Булигін, 19 лютого 2023 року  </p>
+<p class="videoLink" onclick="changeVideo('3QqXLWuWU6Q', 3, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [13] Відео : </span>Псалом 22. Андрій Булигін, 1 січня 2023 року  </p>
+
+
+
+
+                    <div id="player3" class="player-container">
+                        <iframe class="player" src="" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- video4 -->
+<section id="video4" class="parallax-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10 col-sm-12">
+                <div class="content">
+<img src="images/video4-icon.jpg" alt="Иконка video4" width="210" height="120" class="video-icon">
+
+
+                    <h5>НАШЕ СЛУЖІННЯ В ЦЕРКВІ, ЯК ХРИСТОС СЛУЖИВ НАМ</h5>
+                    <h1>video 4</h1>
+
+
+
+<p class="videoLink" onclick="changeVideo('Jgb0yFVOuUE', 4, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [1] Відео : </span> "Проклятие НЕлюбящим Христа" (1Кор. 16:22). Андрей Парфило, 10.12.2023</p>
+<p class="videoLink" onclick="changeVideo('V4Xq-uOQar4', 4, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [2] Відео : </span> "Знакомство с Божими людьми". Андрей Парфило , 1 января 2023 года</p>
+<p class="videoLink" onclick="changeVideo('Ll84l1w7-uE', 4, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [3] Відео : </span> "Инструкция о церковном руководстве" Часть 1 (Титу 1:5-9). Андрей Парфило, 22 января 2023 года</p>
+<p class="videoLink" onclick="changeVideo('9Wm53pkK5kE', 4, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [4] Відео : </span> "Введение в тему церкви" (Деян 2:1-4). Андрей Парфило, 28 мая 2023 года</p>
+<p class="videoLink" onclick="changeVideo('UXSOhV3fsbo', 4, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [5] Відео : </span> "Практика здорового учения для пожилых верующих" (Тит 2:1-5). Андрей Парфило, 25.06.2023</p>
+
+
+
+
+
+                   <div id="player4" class="player-container">
+                        <iframe class="player" src="" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- video5 -->
+<section id="video5" class="parallax-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10 col-sm-12">
+                <div class="content">
+<img src="images/video5-icon.jpg" alt="Иконка video5" width="210" height="120" class="video-icon">
+
+
+                    <h5>НАШЕ СЛУЖІННЯ В ЦЕРКВІ, ЯК ХРИСТОС СЛУЖИВ НАМ</h5>
+                    <h1>video 5</h1>
+
+<p class="videoLink" onclick="changeVideo('ydoPKGAXEqI', 5, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [1] Відео : </span> "Неизбежность страданий" (1Петра 3:13-17). Александр Иванченко, 27 августа 2023 года</p>
+<p class="videoLink" onclick="changeVideo('uBHklCP1yuI', 5, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [2] Відео : </span> "Качества характера необходимые для добродетельной жизни" (1Пет 3:1-15). Александр Иванченко, 25.06.23</p>
+<p class="videoLink" onclick="changeVideo('h_L5EDKTvuQ', 5, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [3] Відео : </span> "Рассудительный брак" (1Пет 3:7). Александр Иванченко, 12 февраля 2023 года</p>
+
+
+                    <div id="player5" class="player-container">
+                        <iframe class="player" src="" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- video6 -->
+<section id="video6" class="parallax-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10 col-sm-12">
+                <div class="content">
+<img src="images/video6-icon.jpg" alt="Иконка video6" width="210" height="120" class="video-icon">
+
+
+                    <h5>НАШЕ СЛУЖІННЯ В ЦЕРКВІ, ЯК ХРИСТОС СЛУЖИВ НАМ</h5>
+                    <h1>video 6</h1>
+
+
+
+<p class="videoLink" onclick="changeVideo('Vz-bYvn4nJE', 6, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [1] Відео : </span> "Сурми Господнього гніву" (Мтв. 24:21; Одкр. 8-10 розд.). Віктор Лаба, 17 вересня 2023 року</p>
+<p class="videoLink" onclick="changeVideo('eSdQLJqwIvw', 6, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [2] Відео : </span> "Велика скорбота: зняття печатей" (Матв 24:21-25; Об'явл 6,7). Віктор Лаба, 16.07.2023</p>
+<p class="videoLink" onclick="changeVideo('Jo2kZvVa7jA', 6, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [3] Відео : </span> "Ми проповідуємо Христа Розп'ятого" (1Кор 1:23-31). Віктор Лаба, 26 лютого 2023 року</p>
+<p class="videoLink" onclick="changeVideo('tprnAf-DtsY', 6, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [4] Відео : </span> "Про події на небі після підхоплення Церкви" (Одкр.4-5 розд.). Віктор Лаба, 11 червня 2023 року</p>
+<p class="videoLink" onclick="changeVideo('RKfl6vohFoo', 6, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [5] Відео : </span> "Послання семи церквам в Асії" (Одкр 2-3). Віктор Лаба, 14 травня 2023</p>
+
+
+
+
+
+                    <div id="player6" class="player-container">
+                        <iframe class="player" src="" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- video7 -->
+<section id="video7" class="parallax-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10 col-sm-12">
+                <div class="content">
+<img src="images/video7-icon.jpg" alt="Иконка video7" width="210" height="120" class="video-icon">
+
+
+                    <h5>НАШЕ СЛУЖІННЯ В ЦЕРКВІ, ЯК ХРИСТОС СЛУЖИВ НАМ</h5>
+                    <h1>video 7</h1>
+
+
+<p class="videoLink" onclick="changeVideo('jVcmmoUiyzw', 7, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [1] Відео : </span> "Яке значення має ТІЛО?" (Євр. 10:5). Віталій Зінченко, 04.02.2024</p>
+<p class="videoLink" onclick="changeVideo('TwAOo4fobuY', 7, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [2] Відео : </span> "Слідкуй за своїм язиком" (Якова 3:1-12). Віталій Зінченко, 18.02.2024</p>
+<p class="videoLink" onclick="changeVideo('ir5wybSr9qM', 7, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [3] Відео : </span> "Помісна церква" (Єфесянам 1:22-23). Віталій Зінченко, 03.03.2024</p>
+<p class="videoLink" onclick="changeVideo('86UN5WyKU4E', 7, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [4] Відео : </span> "Надійний Бог" (Псалом 40). Віталій Зінченко, 01.10.2023</p>
+
+
+                    <div id="player7" class="player-container">
+                        <iframe class="player" src="" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- video8 -->
+<section id="video8" class="parallax-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10 col-sm-12">
+                <div class="content">
+<img src="images/video8-icon.jpg" alt="Иконка video8" width="210" height="120" class="video-icon">
+
+
+                    <h5>НАШЕ СЛУЖІННЯ В ЦЕРКВІ, ЯК ХРИСТОС СЛУЖИВ НАМ</h5>
+                    <h1>video 8</h1>
+
+
+<p class="videoLink" onclick="changeVideo('xObYpOikGo0', 8, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [1] Відео : </span> "Почему христиане могут молчать?" (Иоанна 12:42-43). Сергей Комисар, 10.03.2024</p>
+<p class="videoLink" onclick="changeVideo('n6s_Rpr1fsA', 8, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [2] Відео : </span> "Почему они не веровали?" (Иоанна 12:37-40). Сергей Комисар, 25.02.2024</p>
+<p class="videoLink" onclick="changeVideo('ZL67TjiyNzg', 8, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [3] Відео : </span> "Сколько прощать брату своему?" (Мтф. 18:21). Сергей Комисар, 03.12.2023</p>
+<p class="videoLink" onclick="changeVideo('hC4Ce3YNmp8', 8, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [4] Відео : </span> "Ибо вы к тому призваны" (1Пет 2:18-23). Сергей Комисар, 08.10.2023</p>
+<p class="videoLink" onclick="changeVideo('ehxobrrSZCA', 8, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [5] Відео : </span> "Кто из вас без греха?" (Иоанна 8:1-11). Сергей Комисар, 07.01.2023</p>
+
+
+
+                   <div id="player8" class="player-container">
+                        <iframe class="player" src="" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<script src="js/smoothscroll.js"></script>
+<script src="js/modernizr.custom.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var navbarCollapse = document.querySelector('.navbar-collapse');
+
+    document.addEventListener('click', function(event) {
+        var clickedElement = event.target;
+        var isNavbarToggle = clickedElement.closest('.navbar-toggle');
+        var isNavbarNavItem = clickedElement.closest('.navbar-nav');
+
+        if (!isNavbarToggle && !isNavbarNavItem) {
+            navbarCollapse.classList.remove('in');
+        }
+    });
+
+    // Добавим также обработчик события для закрытия меню при клике на ссылку в меню
+    var navbarLinks = document.querySelectorAll('.navbar-nav > li > a');
+    navbarLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            navbarCollapse.classList.remove('in');
+        });
+    });
+});
+
+
+function changeVideo(videoId, playerId, selectedElement) {
+    var player = document.querySelector('#player' + playerId + ' .player');
+    player.src = 'https://www.youtube.com/embed/' + videoId;
+    stopOtherPlayers(playerId);
+    // Добавляем класс к выбранной строке и удаляем его из предыдущей выбранной строки
+    var previousSelectedElement = document.querySelector('.videoLink.selected-video');
+    if (previousSelectedElement) {
+        previousSelectedElement.classList.remove('selected-video');
+    }
+    selectedElement.classList.add('selected-video');
+}
+function stopOtherPlayers(playerId) {
+    var allPlayers = document.querySelectorAll('.player');
+    allPlayers.forEach(function(player) {
+        var playerIdString = player.parentNode.id.replace('player', '');
+        if (playerIdString !== playerId.toString()) {
+            player.src = '';
+        }
+    });
+}
+
+
+
+
+</script>
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Свяжитесь с нами</h4>
+                <p>Наш адрес: г. Название, ул. Улица, дом №</p>
+                <p>Email: example@example.com</p>
+                <p>Телефон: +1234567890</p>
+            </div>
+            <div class="col-md-6">
+                <h4>Подписывайтесь на нас</h4>
+                <ul class="social-icons">
+                    <li><a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://twitter.com"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+
+
+</body>
+</html>
