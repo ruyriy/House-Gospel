@@ -111,6 +111,13 @@ header {
             background-color: #4dc47d; /* Цвет фона, соответствующий верхней панели */
         }
 
+        .content {
+            padding: 20px;
+            margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+        }
+
 
 
 
@@ -176,35 +183,17 @@ header {
 .player-container {
     position: relative;
     padding-bottom: 56.25%; /* Задает соотношение сторон 16:9 для видео плеера */
-    height: calc(100vh - 80px); /* 80px - высота верхней панели меню */
+    height: 0;
     overflow: hidden;
 }
 
 .player {
     position: absolute;
-    top: 80px; /* Отступ сверху, чтобы учесть высоту верхней панели меню */
+    top: 0;
     left: 0;
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
 }
-
-@media (max-width: 768px) {
-    .player-container {
-        position: relative;
-        padding-bottom: 56.25%; /* Задаем соотношение сторон 16:9 для видео плеера */
-        height: auto; /* Автоматически рассчитываем высоту плеера */
-        overflow: hidden;
-    }
-
-    .player {
-        position: absolute;
-        top: 0; /* Помещаем плеер вверх страницы */
-        left: 0;
-        width: 100%; /* Расширяем ширину плеера на всю ширину родительского контейнера */
-        height: 100%; /* Заполняем доступную высоту */
-    }
-}
-
 
 
 
@@ -527,42 +516,16 @@ header {
                     <h1>(Пастор) Марйоха М. П.</h1>
 		    <h5 id="currentVideoTitle">НАШЕ СЛУЖІННЯ В ЦЕРКВІ, ЯК ХРИСТОС СЛУЖИВ НАМ</h5>
 
+			<p class="videoLink" onclick="changeVideo('MRnut7NwyxE', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [1] Видео : </span> "Як жити у 2024 році?" (Филип'ян 1). Микола Марйоха, 01.01.2024</p>
+			<p class="videoLink" onclick="changeVideo('ruU4oQq9E7w', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [2] Видео : </span> "Хрещення як союз з Христом" (Марка 16:15-16). Микола Марйоха, 06.01.2024</p>
+			<p class="videoLink" onclick="changeVideo('7_dy__UI5XM', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [3] Видео : </span> "Вечеря Господня" (1Коринтян 11:23-26). Микола Марйоха, 07.01.2024</p>
+			<p class="videoLink" onclick="changeVideo('5rDaP3nhL0s', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [4] Видео : </span> "Блаженні чисті серцем" (Матвія 5:1-8). Микола Марйоха, 14.01.2024</p>
+			<p class="videoLink" onclick="changeVideo('pBYuaeI6aJ8', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [5] Видео : </span> "Христос - підтримка наша" (Євреїв 12:1). Микола Марйоха, 03.03.2024</p>
+			<p class="videoLink" onclick="changeVideo('e_R1j1xyY6A', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [6] Видео : </span> "Приклад у зціленні Неємана" (2 Царів 5:1-15). Микола Марйоха, 18.02.2024</p>
+			<p class="videoLink" onclick="changeVideo('MazuoUj3KXE', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [7] Видео : </span> "Блаженні миротворці" (Матвія 5). Микола Марйоха, 11.02.2024</p>
+			<p class="videoLink" onclick="changeVideo('ImmyvGKAH7M', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [8] Видео : </span> "Благодать благої вісті для язичників" (Еф. 3:8-9). Микола Марйоха, 28.01.2024</p>
+			<p class="videoLink" onclick="changeVideo('XlZ3O1G9x-0', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [9] Видео : </span> "Стрітення Господнє" (Лук. 25). Микола Марйоха, 02.02.2024 року</p>
 
-<p class="videoLink" onclick="changeVideo('MRnut7NwyxE', 1, this)">
-    <img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20">
-    <span class="videoNumber"> [1] Видео: </span>
-    &quot;Як жити у 2024 році?&quot; (Филип'ян 1). Микола Марйоха, 01.01.2024
-</p>
-
-<p class="videoLink" onclick="changeVideo('ruU4oQq9E7w', 1, this)">
-    <img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20">
-    <span class="videoNumber"> [2] Видео: </span>
-    &quot;Хрещення як союз з Христом&quot; (Марка 16:15-16). Микола Марйоха, 06.01.2024
-</p>
-
-<p class="videoLink" onclick="changeVideo('7_dy__UI5XM', 1, this)">
-    <img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20">
-    <span class="videoNumber"> [3] Видео: </span>
-    &quot;Вечеря Господня&quot; (1Коринтян 11:23-26). Микола Марйоха, 07.01.2024
-</p>
-
-<p class="videoLink" onclick="changeVideo('5rDaP3nhL0s', 1, this)">
-    <img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20">
-    <span class="videoNumber"> [4] Видео: </span>
-    &quot;Блаженні чисті серцем&quot; (Матвія 5:1-8). Микола Марйоха, 14.01.2024
-</p>
-
-<p class="videoLink" onclick="changeVideo('pBYuaeI6aJ8', 1, this)">
-    <img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20">
-    <span class="videoNumber"> [5] Видео: </span>
-    &quot;Христос - підтримка наша&quot; (Євреїв 12:1). Микола Марйоха, 03.03.2024
-</p>
-
-<p class="videoLink" onclick="changeVideo('e_R1j1xyY6A', 1, this)">
-    <img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20">
-    <span class="videoNumber"> [6] Видео: </span>
-    &quot;Приклад у зціленні Неємана&quot; (2 Царів 5:1-15). Микола Марйоха, 18.02.2024
-</p>
 
 		    <div id="player1" class="player-container">
                        <iframe class="player" src="" width="560" height="315" frameborder="0" allowfullscreen></iframe>
@@ -835,7 +798,6 @@ header {
 <script src="js/modernizr.custom.js"></script>
 
 <script>
-
 document.addEventListener('DOMContentLoaded', function() {
     var navbarCollapse = document.querySelector('.navbar-collapse');
 
@@ -863,19 +825,15 @@ function changeVideo(videoId, playerId, selectedElement) {
     var player = document.querySelector('#player' + playerId + ' .player');
     player.src = 'https://www.youtube.com/embed/' + videoId;
     stopOtherPlayers(playerId);
-    // Учитываем высоту верхней панели меню при перемещении к плееру
-    var menuHeight = document.querySelector('.navbar').offsetHeight;
-    var playerTopPosition = document.querySelector('#player' + playerId).getBoundingClientRect().top;
-    window.scrollTo({
-        top: window.scrollY + playerTopPosition - menuHeight,
-        behavior: 'smooth'
-    });
     // Добавляем класс к выбранной строке и удаляем его из предыдущей выбранной строки
     var previousSelectedElement = document.querySelector('.videoLink.selected-video');
     if (previousSelectedElement) {
         previousSelectedElement.classList.remove('selected-video');
     }
     selectedElement.classList.add('selected-video');
+    
+    // Прокручиваем видеоплеер в центр окна браузера
+    player.parentNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 
@@ -889,21 +847,10 @@ function stopOtherPlayers(playerId) {
     });
 }
 
-function scrollToPlayer(playerId) {
-    var player = document.getElementById('video' + playerId);
-    if (player) {
-        player.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-}
 
 
-function scrollToPlayer(playerId) {
-    var player = document.getElementById('player' + playerId);
-    player.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
 
 </script>
-
 
 
 <footer>
