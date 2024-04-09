@@ -195,7 +195,12 @@ header {
     height: 100%;
 }
 
-
+ .player-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Задает соотношение сторон 16:9 для видео плеера */
+      height: calc(100vh - 60px); /* 60px - высота верхней панели меню */
+    overflow: hidden;
+}
 
 
 /* CSS анимация для эффекта переворота */
