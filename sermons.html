@@ -202,9 +202,12 @@ header {
     overflow: hidden;
 }
 
-@media (max-width: 768px) { /* Примерное значение для мобильных устройств */
+@media (max-width: 768px) {
     .player-container {
-        height: 300px; /* Фиксированная высота для мобильных устройств */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 	 
