@@ -202,7 +202,12 @@ header {
     overflow: hidden;
 }
 
-
+@media (max-width: 768px) { /* Примерное значение для мобильных устройств */
+    .player-container {
+        height: 300px; /* Фиксированная высота для мобильных устройств */
+    }
+}
+	 
 /* CSS анимация для эффекта переворота */
 .flipAnimation {
     animation: flipAnimation 4s ease; /* Применяем анимацию с переворотом */
