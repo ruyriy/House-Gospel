@@ -970,7 +970,13 @@ function changeVideo(videoId, playerId, selectedElement) {
     var player = document.querySelector('#player' + playerId + ' .player');
     player.src = 'https://www.youtube.com/embed/' + videoId;
     stopOtherPlayers(playerId);
-    scrollToPlayer(playerId); // Прокручиваем страницу к плееру
+    // Учитываем высоту верхней панели меню при перемещении к плееру
+    var menuHeight = document.querySelector('.navbar').offsetHeight;
+    var playerTopPosition = document.querySelector('#player' + playerId).getBoundingClientRect().top;
+    window.scrollTo({
+        top: window.scrollY + playerTopPosition - menuHeight,
+        behavior: 'smooth'
+    });
     // Добавляем класс к выбранной строке и удаляем его из предыдущей выбранной строки
     var previousSelectedElement = document.querySelector('.videoLink.selected-video');
     if (previousSelectedElement) {
@@ -978,7 +984,6 @@ function changeVideo(videoId, playerId, selectedElement) {
     }
     selectedElement.classList.add('selected-video');
 }
-
 
 function stopOtherPlayers(playerId) {
     var allPlayers = document.querySelectorAll('.player');
