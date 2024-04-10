@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Новая страница с меню</title>
+    <title>Джерело Віри: Християнський Ресурс</title>
 
     <!-- Подключение стилей Bootstrap, вашего собственного файла стилей и стилей tooplate-style.css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -19,10 +19,6 @@
     <!-- Ваши собственные скрипты -->
     <script src="js/your-script.js"></script>
     <script src="js/smoothscroll.js"></script>
-
- 
-
-
  <style>
 
 
@@ -48,75 +44,90 @@ header {
 
 
 
-/* Перемещаем всплывающие элементы меню влево */
-        .navbar-nav {
-            margin-left: auto;
-        }
+/* Перемещаем основные элементы горизонтального меню влево */
+.navbar-nav {
+    margin-left: 20px; /* Левый отступ для основных элементов меню */
+}
 
-        /* Стиль для текста меню */
-        .navbar-nav > li > a {
-            font-family: 'Open Sans', sans-serif; /* Применяем выбранный шрифт */
-            font-weight: 400;
-            text-transform: uppercase; /* Преобразуем текст в верхний регистр */
-            font-size: 13px;
-            color: #fff !important; /* Цвет текста */
-            padding: 5px 10px; /* Отступы для элементов меню */
-        }
+/* Стиль для текста основных элементов меню */
+.navbar-nav > li > a {
+    font-family: 'Open Sans', sans-serif; /* Применяем выбранный шрифт */
+    font-weight: 400;
+    text-transform: uppercase; /* Преобразуем текст в верхний регистр */
+    font-size: 14px;
+    color: #fff !important; /* Цвет текста */
+    padding: 5px 18px; /* Отступы для элементов меню */
+}
 
-        /* Убираем подсветку при наведении курсора мыши */
-        .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
-            background-color: transparent !important;
-        }
+/* Убираем подсветку при наведении курсора мыши на основные элементы меню */
+.navbar-inverse .navbar-nav > li > a:focus,
+.navbar-inverse .navbar-nav > li > a:hover {
+    background-color: transparent !important;
+}
 
-        /* Убираем подсветку меню бургера при наведении курсора мыши */
-        .navbar-toggle:focus, .navbar-toggle:hover {
-            background-color: transparent !important;
-        }
+/* Убираем подсветку меню бургера при наведении курсора мыши */
+.navbar-toggle:focus,
+.navbar-toggle:hover {
+    background-color: transparent !important;
+}
 
-        /* Изменение цвета фона всего меню */
-        .navbar-inverse {
-            background-color: #4dc47d;
-        }
+/* Изменение цвета фона всего меню */
+.navbar-inverse {
+    background-color: #4dc47d;
+}
 
-        /* Цвет логотипа */
-        .navbar-inverse .navbar-brand {
-            color: #fff; /* Цвет логотипа */
-        }
+/* Цвет логотипа */
+.navbar-inverse .navbar-brand {
+    color: #fff; /* Цвет логотипа */
+}
 
-        /* Убираем обводы вокруг меню */
-        .navbar {
-            border: none;
-        }
+/* Убираем обводы вокруг меню */
+.navbar {
+    border: none;
+}
 
-        /* Убираем обвод вокруг меню бургера */
-        .navbar-toggle {
-            border: none;
-        }
+/* Убираем обвод вокруг меню бургера */
+.navbar-toggle {
+    border: none;
+}
 
-        /* Вертикальные отступы для элементов меню на ПК */
-        .navbar-nav > li {
-            margin-top: 0px; /* Верхний отступ */
-            margin-bottom: 0px; /* Нижний отступ */
-        }      
+/* Вертикальные отступы для элементов меню на ПК */
+.navbar-nav > li {
+    margin-top: 0px; /* Верхний отступ */
+    margin-bottom: 0px; /* Нижний отступ */
+}      
 
-        /* Увеличение верхней панели меню по вертикали */
-        .navbar {
-            padding-top: 5px; /* Верхний отступ */
-            padding-bottom: 5px; /* Нижний отступ */
-        }
+/* Увеличение верхней панели меню по вертикали */
+.navbar {
+    padding-top: 5px; /* Верхний отступ */
+    padding-bottom: 5px; /* Нижний отступ */
 
-        /* Убираем разделительную черту между верхней панелью и выпадающим меню в режиме мобильного */
-        .navbar-collapse {
-            border-top: none; /* Устанавливаем нулевую толщину границы */
-            background-color: #4dc47d; /* Цвет фона, соответствующий верхней панели */
-        }
+ 
 
-        .content {
-            padding: 20px;
-            margin-top: 60px;
-            display: flex;
-            flex-direction: column;
-        }
+
+}
+
+/* Убираем разделительную черту между верхней панелью и выпадающим меню в режиме мобильного */
+.navbar-collapse {
+    border-top: none; /* Устанавливаем нулевую толщину границы */
+    background-color: #4dc47d; /* Цвет фона, соответствующий верхней панели */
+}
+
+/* Стили для основных элементов меню на ПК */
+@media (min-width: 768px) {
+    .navbar-nav {
+        margin-left: 300px;
+    }
+}
+
+
+
+.content {
+    padding: 20px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+}
 
 
 
@@ -152,7 +163,7 @@ header {
     box-sizing: border-box;
     /*background-color: #ffffff;  Цвет фона контейнера */
     /* ИЛИ */
-    background-image: url('images/icon4.jpg');  /* Использовать изображение в качестве фона */
+    background-image: u4l('images/icon3.jpg');  /* Использовать изображение в качестве фона */
     background-size: cover;  /* Растягиваем изображение, чтобы оно покрывало всю область */
 }
 
@@ -311,17 +322,29 @@ header {
     white-space: nowrap; /* Предотвращаем перенос текста на новую строку */
 }
 
+/* Стили для текстового логотипа */
+#logo {
+    position: absolute;
+    top: 10px;
+    left: 120px;
+    color: #ffffff; /* Цвет текста логотипа */
+    font-family: 'Arial', sans-serif; /* Устанавливаем выбранный шрифт */
+    font-size: 20px; /* Устанавливаем размер текста логотипа */
+    z-index: 2; /* Устанавливаем выше z-index, чтобы логотип находился поверх других элементов */
+}
 
+/* Стили для разметки логотипа в заголовке */
+header {
+    position: relative; /* Устанавливаем позиционирование */
+    z-index: 1; /* Устанавливаем ниже z-index, чтобы заголовок находился под меню */
+}
 
 
   </style>
 
-
-
-
 </head>
 <body>
-
+ 
 
 <!-- MENU -->
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -334,6 +357,13 @@ header {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+
+
+<!-- Логотип вне контейнера меню -->
+<a href="index.html" class="navbar-brand" id="logo">
+    <span>Християнський портал † </span>
+</a>
+   
  
         </div>
 
@@ -361,22 +391,26 @@ header {
 
 <div id="page-content" class="fade-in">
 
+ <!-- Разметка для логотипа в заголовке -->
+<header>
+    <div class="logo">
+        <img src="images/logoV2.png" alt="Логотип">
+    </div>
+</header>
 
-    <header>
-        <div class="logo">
-            <img src="images/logoV2.png" alt="Логотип">
-        </div>
-    </header>
+ 
 
 
 <!-- ABOUT -->
 <section id="about" class="parallax-section">
+
      <div class="container">
-          <div class="row">
+
+         <div class="row">
 
                <div class="col-md-offset-1 col-md-10 col-sm-12">
                      <div class="about-info flipAnimation">
-                     <h3>Не залишайтеся на єдині - відкрийте для себе нескінченний океан мудрості, що прихований у кожному записі слова..</h3>
+                     <h3>Відчуйте глибину cлова Божого, і дайте йому можливість трансформувати ваше життя. Хай кожна проповідь стане для вас джерелом натхнення та сили в дорозі до Бога.</h3>
                       <div style="font-size: 52px; font-weight: 10; color: red;);">
                          Якова 1:21 «Тому, відклавши всяку нечистоту та решту злості, прийміть у лагідності насаджуване слово, що може спасти ваші душі».
                       </div>
@@ -394,7 +428,7 @@ header {
 
 </div>
 
-
+ 
 
 <!-- Gallery -->
 <section id="gallery" class="parallax-section">
@@ -443,7 +477,7 @@ header {
         	   <a href="#video4" class="smoothScroll">
             	      <div class="image-container">
                 	 <img src="images/video4-icon.jpg" alt="Image 4">
-                       <div class="caption">(Проповідник) Андрей Парфило</div>
+                       <div class="caption">(Проповідник) Парфіло Андрій</div>
                     </div>
                  </a>
                </div>
@@ -625,7 +659,7 @@ header {
 
 
                     <h5>НАШЕ СЛУЖІННЯ В ЦЕРКВІ, ЯК ХРИСТОС СЛУЖИВ НАМ</h5>
-                    <h1>Андрей Парфило</h1>
+                    <h1>Парфіло Олександр</h1>
 
 
 
