@@ -19,8 +19,8 @@
     <!-- Ваши собственные скрипты -->
     <script src="js/your-script.js"></script>
     <script src="js/smoothscroll.js"></script>
- <style>
 
+ <style>
 
 header {
     background-color: #f8f9fa; /* Цвет фона шапки */
@@ -236,7 +236,6 @@ header {
 
 
 
-
 /* Стили для секции галереи */
 #gallery {
     background-image: url('images/kul4.jpg'); /* Путь к изображению для фона */
@@ -246,7 +245,6 @@ header {
     padding: 160px 0; /* Вертикальные отступы */
     border-radius: 5px; /* Закругленные углы */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8); /* Увеличенная тень */
-
 }
 
 /* Стили для заголовка секции */
@@ -262,6 +260,7 @@ header {
     border-radius: 5px; /* Закругленные углы */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень */
     transition: transform 0.3s ease-in-out; /* Анимация при наведении */
+    background-color: transparent; /* Прозрачный фон для текста */
 }
 
 /* Стили для изображений в галерее */
@@ -277,15 +276,23 @@ header {
     transform: translateY(-5px); /* Смещение вверх при наведении */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Увеличенная тень */
 }
+
 .gallery-item:hover img {
     transform: scale(1.05); /* Увеличение размера изображения при наведении */
 }
 
-.gallery-item {
-    position: relative; /* Чтобы подпись была относительно этого блока */
-    background-color: transparent; /* Прозрачный фон */
-
+/* Стили для подписи */
+.gallery-item .caption {
+    position: absolute; /* Абсолютное позиционирование относительно родительского элемента */
+    bottom: 10px; /* Отступ от нижнего края */
+    left: 0; /* Отступ от левого края */
+    width: 100%; /* Ширина 100% */
+    text-align: center; /* Выравнивание текста по центру */
+    background-color: transparent; /* Прозрачный фон для текста */
+    padding: 10px; /* Внутренние отступы */
 }
+
+
 
 
 
@@ -450,29 +457,28 @@ header {
                  </a>
                </div>
 	     </div>
-	    <div class="col-md-4 col-sm-6">
-    		<div class="gallery-item">
-        	   <a href="#video1" class="smoothScroll">
-            	      <div class="image-container">
-                	 <img src="images/video2-icon.jpg" alt="Image 2">
-                       <div class="caption">(Диякон) Міщенко Андрій</div>
-                   </div>
+            <div class="col-md-4 col-sm-6">
+             <div class="gallery-item">
+               <a href="#video1" class="smoothScroll">
+                 <div class="image-container">
+                   <img src="images/video2-icon.jpg" alt="Image 2">
+                 <div class="caption">(Диякон) Міщенко Андрій</div>
+               </div>
+              </a>
+             </div>
+            </div>
+           <div class="col-md-4 col-sm-6">
+              <div class="gallery-item">
+                <a href="#video3" class="smoothScroll">
+                  <div class="image-container">
+                   <img src="images/video3-icon.jpg" alt="Image 3">
+                    <div class="caption">(Диякон) Булигін Андрій Петрович</div>
+                  </div>
                  </a>
                </div>
-	     </div
-	    <div class="col-md-4 col-sm-6">
-    		<div class="gallery-item">
-        	   <a href="#video3" class="smoothScroll">
-            	      <div class="image-container">
-                	 <img src="images/video3-icon.jpg" alt="Image 3">
-                         <div class="caption">(Диякон) Булигін Андрій Петрович</div>
-                     </div>
-                  </a>
-               </div>
-	     </div
-            <!-- Добавьте дополнительные блоки с изображениями по аналогии -->
-
-	    <div class="col-md-4 col-sm-6">
+              </div>
+	   
+              <div class="col-md-4 col-sm-6">
     		<div class="gallery-item">
         	   <a href="#video4" class="smoothScroll">
             	      <div class="image-container">
