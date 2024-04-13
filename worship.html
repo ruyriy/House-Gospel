@@ -1,0 +1,739 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Джерело Віри: Християнський Ресурс</title>
+
+    <!-- Подключение стилей Bootstrap, вашего собственного файла стилей и стилей tooplate-style.css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/your-styles.css">
+    <link rel="stylesheet" href="css/tooplate-style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-...Значение хэша..." crossorigin="anonymous" />
+
+    
+<!-- Подключение скриптов jQuery и Bootstrap -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Ваши собственные скрипты -->
+    <script src="js/your-script.js"></script>
+    <script src="js/smoothscroll.js"></script>
+
+ <style>
+
+header {
+    background-color: #f8f9fa; /* Цвет фона шапки */
+    padding: 10px;
+}
+
+.logo {
+    position: absolute; /* Устанавливаем абсолютное позиционирование */
+    float: left; /* Логотип выравнивается слева */   
+    top: 50px; /* Отступ сверху 20 пикселей от верхнего края родительского контейнера */
+    opacity: 0.8; /* Прозрачность логотипа */
+}
+
+.logo img {
+   width: auto; /* Ширина логотипа */
+    height: auto; /* Автоматическая высота, чтобы сохранить пропорции */
+    opacity: 0.8; /* Прозрачность изображения логотипа */
+}
+
+
+/* Перемещаем основные элементы горизонтального меню влево */
+.navbar-nav {
+    margin-left: 20px; /* Левый отступ для основных элементов меню */
+}
+
+/* Стиль для текста основных элементов меню */
+.navbar-nav > li > a {
+    font-family: 'Open Sans', sans-serif; /* Применяем выбранный шрифт */
+    font-weight: 400;
+    text-transform: uppercase; /* Преобразуем текст в верхний регистр */
+    font-size: 14px;
+    color: #fff !important; /* Цвет текста */
+    padding: 5px 18px; /* Отступы для элементов меню */
+}
+
+/* Убираем подсветку при наведении курсора мыши на основные элементы меню */
+.navbar-inverse .navbar-nav > li > a:focus,
+.navbar-inverse .navbar-nav > li > a:hover {
+    background-color: transparent !important;
+}
+
+/* Убираем подсветку меню бургера при наведении курсора мыши */
+.navbar-toggle:focus,
+.navbar-toggle:hover {
+    background-color: transparent !important;
+}
+
+/* Изменение цвета фона всего меню */
+.navbar-inverse {
+    background-color: #4dc47d;
+}
+
+/* Цвет логотипа */
+.navbar-inverse .navbar-brand {
+    color: #fff; /* Цвет логотипа */
+}
+
+/* Убираем обводы вокруг меню */
+.navbar {
+    border: none;
+}
+
+/* Убираем обвод вокруг меню бургера */
+.navbar-toggle {
+    border: none;
+}
+
+/* Вертикальные отступы для элементов меню на ПК */
+.navbar-nav > li {
+    margin-top: 0px; /* Верхний отступ */
+    margin-bottom: 0px; /* Нижний отступ */
+}      
+
+/* Увеличение верхней панели меню по вертикали */
+.navbar {
+    padding-top: 5px; /* Верхний отступ */
+    padding-bottom: 5px; /* Нижний отступ */
+
+
+}
+
+/* Убираем разделительную черту между верхней панелью и выпадающим меню в режиме мобильного */
+.navbar-collapse {
+    border-top: none; /* Устанавливаем нулевую толщину границы */
+    background-color: #4dc47d; /* Цвет фона, соответствующий верхней панели */
+}
+
+/* Стили для основных элементов меню на ПК */
+@media (min-width: 768px) {
+    .navbar-nav {
+        margin-left: 300px;
+    }
+}
+
+
+
+.content {
+    padding: 20px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+          /* Назначаем новый стиль для элементов с классом videoLink */
+        .videoLink {
+            font-family: 'Arial', sans-serif; /* Выбираем новый шрифт */
+            font-weight: 300; /* Устанавливаем более тонкий шрифт */
+            font-size: 16px; /* Размер шрифта */
+            color: #0000ff !important; /* Цвет текста */
+            color: #000000 !important; /* Чёрный цвет текста */
+        }
+
+        /* Стиль для изменения цвета текста при нажатии */
+        .videoLink:active {
+            color: #ff0000 !important; /* Цвет текста при активном состоянии */
+        }
+
+        /* Стиль для изменения цвета текста при наведении курсора мыши */
+        .videoLink:hover {
+            color: #00ff00 !important; /* Цвет текста при наведении */
+            cursor: pointer; /* Изменение курсора при наведении */
+        }
+
+
+#video1, #video2, #video3, #video4, #video5, #video6, #video7, #video8 {
+    border: 1px solid;
+    border-radius: 10px;
+    
+    max-width: 1100px;
+    margin: 20px auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    background-image: url('images/icon4.jpg_');
+    background-size: cover;
+
+    /* Установка цвета рамки равным цвету фона */
+    border-color: #ffffff; /* Измените на актуальный цвет фона, если это не #ffffff */
+}
+
+
+.video-icon {
+    border-radius: 10px; /* Округление углов изображения */
+    box-shadow: 10px 0 10px rgba(0, 0, 0, 0.5); /* Добавление тени справа */
+    transition: transform 0.3s ease; /* Плавное изменение размера при наведении */
+}
+
+.video-icon:hover {
+    transform: scale(1.3); /* Увеличение размера при наведении */
+}
+
+.content {
+    padding: 20px !important; /* Отступы внутри содержимого контейнера */
+}
+
+	.videoLink .videoNumber {
+    	    color: blue;  /*   red;Устанавливаем красный цвет для нумерации */
+	}
+
+       .selected-video {
+         background-color: #d1fbd2; /* Цвет фона для выбранной строки (светло- ) */
+        }
+
+
+.player-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Задает соотношение сторон 16:9 для видео плеера */
+    height: 0;
+    overflow: hidden;
+}
+
+.player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+#about {
+    background-image: url('images/sq-5.jpg'); /* Устанавливаем фоновое изображение */
+    background-size: cover; /* Масштабируем изображение по размеру контейнера */
+    background-position: center; /* Центрируем изображение */
+    background-repeat: no-repeat; /* Запрещаем повторение изображения */
+    padding: 150px 0; /* Добавляем внутренние отступы сверху и снизу для контента */
+}
+
+
+
+/* Стили для секции галереи-меню */
+#gallery {
+    background-image: url('images/icon6.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 160px 0;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+/* Стили для заголовка секции */
+#gallery .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Стили для элементов галереи-меню */
+.gallery-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.gallery-item {
+    cursor: pointer;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    background-color: transparent;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для изображений в галереи-меню */
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Стили для подписи */
+.gallery-item .caption {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный фон */
+    padding: 10px;
+    color: #CCCCCC;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    border-radius: 5px; /* Закругленные углы для фона */
+}
+
+.gallery-item:hover .caption {
+    opacity: 1;
+}
+
+.gallery-item:hover .caption {
+    opacity: 1;
+}
+
+
+.caption {
+    position: absolute;
+    top: 50%; /* Располагаем подпись на половине высоты блока */
+    right: 0; /* Располагаем подпись справа */
+    transform: translateY(-50%); /* Сдвигаем подпись вверх на половину её высоты */
+    background-color: rgba(0, 0, 0, 0.7); /* Задаем цвет фона для подписи */
+    color: white; /* Задаем цвет текста для подписи */
+    padding: 5px 10px; /* Добавляем отступы вокруг текста */
+    font-size: 14px; /* Задаем размер шрифта для подписи */
+    white-space: nowrap; /* Предотвращаем перенос текста на новую строку */
+}
+
+/* Стили для текстового логотипа */
+#logo {
+    position: absolute;
+    top: 10px;
+    left: 60px;
+    color: #ffffff; /* Цвет текста логотипа */
+    font-family: 'Arial', sans-serif; /* Устанавливаем выбранный шрифт */
+    font-size: 20px; /* Устанавливаем размер текста логотипа */
+    z-index: 2; /* Устанавливаем выше z-index, чтобы логотип находился поверх других элементов */
+}
+
+/* Стили для разметки логотипа в заголовке */
+header {
+    position: relative; /* Устанавливаем позиционирование */
+    z-index: 1; /* Устанавливаем ниже z-index, чтобы заголовок находился под меню */
+}
+
+
+/* CSS анимация для плавного увеличения */
+.scaleAnimation {
+    animation: scaleAnimation 8s ease; /* Применяем анимацию масштабирования */
+}
+
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(0); /* Начальное значение: объект не видим */
+    }
+    100% {
+        transform: scale(1); /* Завершающее значение: объект масштабирован до исходного размера */
+    }
+}
+
+
+
+
+/* Скрыть контент при загрузке страницы */
+#page-content {
+    opacity: 0;
+}
+
+/* Анимация появления */
+.fade-in {
+    animation: fadeInAnimation 2s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+  </style>
+
+</head>
+<body>
+ 
+
+<!-- MENU -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <div class="container">
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+
+<!-- Логотип вне контейнера меню -->
+<a href="index.html" class="navbar-brand" id="logo">
+    <span>Християнський портал † </span>
+</a>
+   
+ 
+        </div>
+
+        <div class="collapse navbar-collapse">
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#about" class="smoothScroll">ГОЛОВНА</a></li>
+                <li><a href="#gallery" class="smoothScroll">ГАЛЕРЕЯ</a></li>
+                <li><a href="#video1" class="smoothScroll">ВІДЕОЗАПИСИ БОГОСЛУЖІНЬ</a></li>
+                <li><a href="#video2" class="smoothScroll">ПРО СЛУЖІННЯ</a></li>
+                <li><a href="#video3" class="smoothScroll">КОНТАКТИ</a></li>
+
+            </ul>
+        </div><!--/.nav-collapse -->
+
+
+    </div>
+</div>
+
+<div id="page-content" class="fade-in">
+
+ <!-- Разметка для логотипа в заголовке -->
+<header>
+    <div class="logo">
+        <img src="images/logoV2.png" alt="Логотип">
+    </div>
+</header>
+
+ 
+
+<!-- ABOUT -->
+<section id="about" class="parallax-section">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-offset-1 col-md-10 col-sm-12">
+                     <div class="about-info scaleAnimation">
+                      <div style="font-size: 18px; font-weight: 10; color: yellow;);">
+			 Не залишайтеся на єдині - відкрийте для себе нескінченний океан мудрості, що прихований у кожному записі слова.
+		      </div>
+
+                      <div style="font-size: 52px; font-weight: 10; color: white;);">
+                        2 Петра 3:9 | «Бог не бажає, щоб хтось загинув, але щоб усі дійшли покаяння».
+
+                      </div>
+		      <ul class="section-btn">   
+   		         <a href="#gallery" class="smoothScroll"><span data-hover="Відкрий більше">Відкрий більше</span></a>                        
+		      </ul>
+
+		    </div>
+
+               </div>
+
+          </div>
+     </div>
+</section
+</div>
+
+
+
+<section id="gallery" class="parallax-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="section-title">Меню-Галерея</h1>
+            </div>
+        </div>
+        <div class="row gallery-menu">
+            <div class="col-md-4 col-sm-6">
+                <a href="#video1" class="smoothScroll">
+                    <div class="gallery-item">
+                        <img src="images/project-image1.jpg" alt="Image 1">
+                        <div class="caption">Наше Богослужіння</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="#video2" class="smoothScroll">
+                    <div class="gallery-item">
+                        <img src="images/team-image8.jpg" alt="Image 2">
+                        <div class="caption">video2</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="#section3" class="smoothScroll">
+                    <div class="gallery-item">
+                        <img src="images/icon3.jpg" alt="Image 3">
+                        <div class="caption">Ссылка 3</div>
+                    </div>
+                </a>
+            </div>
+            <!-- Добавьте дополнительные элементы меню по аналогии -->
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!-- video1 -->
+<section id="video1" class="parallax-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10 col-sm-12">
+                <div class="content">                   
+
+<img src="images/slug.jpg" alt="Иконка video1" width="210" height="120" class="video-icon">
+
+                    <h5> Церква </h5>
+<ul>
+    <li><a href="#2024" class="smoothScroll" style="color: #0000FF; font-family: Arial, sans-serif; font-size: 16px; text-decoration: none;">Запис за 2024 рік.</a></li>
+    <li><a href="#2023" class="smoothScroll" style="color: #0000FF; font-family: Arial, sans-serif; font-size: 16px; text-decoration: none;">Запис за 2023 рік.</a></li>
+    <li><a href="#2022" class="smoothScroll" style="color: #0000FF; font-family: Arial, sans-serif; font-size: 16px; text-decoration: none;">Запис за 2022 рік.</a></li>
+</ul>
+
+
+                    <h1>[ Наше Богослужіння ]</h1>
+
+<div id="2024" style="text-align: center; color: #0000FF; font-family: Arial, sans-serif; font-size: 16px;">[ 2024 рік. ]</div>
+
+<p class="videoLink" onclick="changeVideo('gMKUYz-Yakw', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [227] Видео: </span>Служіння 7 квітня 2024 року (7 апреля 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('hvUYQsQRjKE', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [226] Видео: </span>Служіння 31 березня 2024 року (2 апреля 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('U0g59-CJzgU', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [225] Видео: </span>Служіння 28 березня 2024 (30 марта 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('_IegH6OdaWY', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [224] Видео: </span>Служіння 24 березня 2024 рокк (25 марта 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('0Rq-RCb_zjU', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [223] Видео: </span>Служіння 17 березня 2024 року (18 марта 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('f0AMXsHDhxM', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [222] Видео: </span>Служіння 10 березня 2024 року (10 марта 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('TZv1aaVatCs', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [221] Видео: </span>Служіння церкви "Дім Євангелія" (2023 рік) (4 марта 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('Pd-RN12brvs', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [220] Видео: </span>Служіння 3 березня 2024 року (4 марта 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('3evc7n096BU', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [219] Видео: </span>Служіння церкви "Дім Євангелія" (2023 рік) (26 февраля 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('4NHXOzqYhH4', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [218] Видео: </span>Служіння 25 лютого 2024 року (26 февраля 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('ufNI8qfH6T8', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [217] Видео: </span>Служіння 18 лютого 2024 року (19 февраля 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('D_qijRO8UO8', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [216] Видео: </span>Служіння 11 лютого 2024 року (12 февраля 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('UNKdKGBq0Ps', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [215] Видео: </span>Стрітення Господнє. Вечірнє служіння 02.02.2024 року (6 февраля 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('GBWN7NqIon0', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [214] Видео: </span>Стрітення Господнє. Ранкове служіння 2 лютого 2024 року (5 февраля 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('0XlPG05ovgg', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [213] Видео: </span>Служіння 4 лютого 2024 року (4 февраля 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('5iO0SAuTZPE', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [212] Видео: </span>Служіння 28 січня 2024 року (28 января 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('zMyYnYV49AU', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [211] Видео: </span>Служіння 21 січня 2024 року (21 января 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('jqs9daaNt9I', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [210] Видео: </span>Служіння 14 січня 2024 року (15 января 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('I2Ihf-uVnnM', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [209] Видео: </span>Служіння 7 січня 2024 року (8 января 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('jAw012ZCiFI', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [208] Видео: </span>Служіння 6 січня 2024 року (6 января 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('2CH20Ohvmas', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [207] Видео: </span>Служіння 1 січня 2024 року (2 января 2024 г.)</p>
+<p class="videoLink" onclick="changeVideo('b0-5N1bnKv0', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [206] Видео: </span>Служіння 31 грудня 2023 року (1 января 2024 г.)</p>
+
+<div id="2023" style="text-align: center; color: #0000FF; font-family: Arial, sans-serif; font-size: 16px;">[ 2023 рік. ]</div>
+
+<p class="videoLink" onclick="changeVideo('EFnUApUrGPY', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [205] Видео: </span>Прославлення Господа (загальноміське Різдвяне служіння 25.12.2023) (27 декабря 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('CclgZSumQaA', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [204] Видео: </span>Загальноміське Різдвяне служіння 25 грудня 2023 року (27 декабря 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('TBLOgns2D50', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [203] Видео: </span>"Бо ДИТЯ народилося нам". Дитяче служіння 24 грудня 2023 року (25 декабря 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('eQZ8SfwW4L4', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [202] Видео: </span>Служіння 24 грудня 2023 року (24 декабря 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('pou3X9A11N0', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [201] Видео: </span>Служіння 17 грудня 2023 року (17 декабря 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('MCuvKXnlGNw', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [200] Видео: </span>Служіння 26 листопада 2023 (26 ноября 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('HET_KickSMo', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [199] Видео: </span>Служіння 19 листопада 2023 року (19 ноября 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('XOMpG0x3yZU', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [198] Видео: </span>Служіння 12 листопада 2023 (12 ноября 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('JHExyVHJa7c', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [197] Видео: </span>Служіння 5 жовтня 2023 року (5 ноября 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('hBEmdmf5vKM', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [196] Видео: </span>Служіння 29 жовтня 2023 року (29 октября 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('5IamgmZbUTY', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [195] Видео: </span>Служіння 22 жовтня 2023 року (22 октября 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('HizE7n9N6Cc', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [194] Видео: </span>Служіння 15 жовтня 2023 року (15 октября 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('2vMokpPeUXw', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [193] Видео: </span>Служіння 8 жовтня 2023 року (8 октября 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('pomKteYO9TI', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [192] Видео: </span>Служіння 10 жовтня 2023 року (1 октября 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('CwNA-EbK7J4', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [191] Видео: </span>Служіння 17 вересня 2023 року (17 сентября 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('shDpxmm9cSQ', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [190] Видео: </span>Служіння 3 вересня 2023 року (4 сентября 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('7StPnhePCdA', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [189] Видео: </span>Служіння 27 серпня 2023 року (27 августа 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('Y1ijpGlpKIs', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [188] Видео: </span>Служіння 6 серпня 2023 року (7 августа 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('1VSyTuMDZiQ', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [187] Видео: </span>Служіння 2 липня 2023 року (8 июля 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('ybmMXW1whQY', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [186] Видео: </span>Служіння 25 червня 2023 року (28 июня 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('PBrBg7HMiWo', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [185] Видео: </span>Служіння 18 червня 2023 року (21 июня 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('DbLWCO8K18w', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [184] Видео: </span>Служіння 11 червня 2023 року (14 июня 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('tPacwsoesx4', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [183] Видео: </span>Служіння 4 червня 2023 року (10 июня 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('Kf8R40hYIN0', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [182] Видео: </span>Служіння 28 травня 2023 року (30 мая 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('CEZBKurN_Qs', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [181] Видео: </span>Служіння 21 травня 2023 року (22 мая 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('m3R02f-MKXc', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [180] Видео: </span>Служіння 14 травня 2023 року (18 мая 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('E5PnVxJQSUM', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [179] Видео: </span>Траурне служіння Богдана Курилова (10.05.2023) (10 мая 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('a7VqGtI0sSA', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [178] Видео: </span>Траурне служіння Богдана Курилова 10.05.2023 (10 мая 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('7pUJfqI3HKU', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [177] Видео: </span>Служіння 30 квітня 2023 року (4 мая 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('-IUT15Q7WWs', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [176] Видео: </span>Служіння 23 квітня 2023 року (продовження) (30 апреля 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('mHJVcT4t3JE', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [175] Видео: </span>Служіння 23 квітня 2023 року (30 апреля 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('OvneZG-Iq6Q', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [174] Видео: </span>Служіння 16 квітня 2023 року (23 апреля 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('bTFExaAZM_4', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [173] Видео: </span>Вечірнє служіння 9 квітня 2023 року (20 апреля 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('vyQrHw84Ck0', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [172] Видео: </span>Ранкове служіння 9 квітня 2023 року (17 апреля 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('2HlKbYQVXbI', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [171] Видео: </span>Служіння 6 квітня 2023 року (16 апреля 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('FXjYizwrIio', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [170] Видео: </span>Служіння 2 квітня 2023 року (5 апреля 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('fi0oTfFNmOc', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [169] Видео: </span>Служіння 26 березня 2023 року (31 марта 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('3_fm5R6LP-Y', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [168] Видео: </span>Служіння 19 березня 2023 року (20 марта 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('kqMkhfwvt78', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [167] Видео: </span>Служіння 12 березня 2023 року (13 марта 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('XqHsK30zB00', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [166] Видео: </span>Служіння 26 лютого 2023 року (28 февраля 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('LC-uMYmWbWc', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [165] Видео: </span>Служіння 19 лютого 2023 року (20 февраля 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('g835u07slXI', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [164] Видео: </span>Служіння 12 лютого 2023 року (13 февраля 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('Y_0fD7a3dgg', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [163] Видео: </span>Служіння 5 лютого 2023 року (6 февраля 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('sB-30p3-ZqM', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [162] Видео: </span>Служіння 29 січня 2023 року (31 января 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('djjvZnQXAms', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [161] Видео: </span>Служіння 22 січня 2023 року (24 января 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('9pqCbmWZdPI', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [160] Видео: </span>Служіння 15 січня 2023 року (17 января 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('bxjsgd-y-qc', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [159] Видео: </span>Служіння 8 січня 2023 року (14 января 2023 г.)</p>
+<p class="videoLink" onclick="changeVideo('gmtv2_8mNUQ', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [158] Видео: </span>Служіння 1 січня 2023 року (5 января 2023 г.)</p>
+
+<div id="2022" style="text-align: center; color: #0000FF; font-family: Arial, sans-serif; font-size: 16px;">[ 2022 рік. ]</div>
+
+<p class="videoLink" onclick="changeVideo('mS2VVMoPoKo', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [157] Видео: </span>Служіння 25 грудня42022 року (25 декабря 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('D6DxHhwgO4A', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [156] Видео: </span>Служіння 18 грудня 2022 року (23 декабря 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('nAYUZtYAnSQ', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [155] Видео: </span>Служіння 11 грудня 2022 року (13 декабря 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('9wA0UrHnE5k', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [154] Видео: </span>Служіння 4 грудня 2022 року (4 декабря 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('js2UFdRA3kc', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [153] Видео: </span>Служіння 27 листопада 2022 року (28 ноября 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('9stbo-ORfUo', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [152] Видео: </span>Служіння 20 листопада 2022 року (21 ноября 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('ATKk8CJRoTg', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [151] Видео: </span>Служіння 13 листопада 2022 року (14 ноября 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('HXb9v2VigR4', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [150] Видео: </span>Служіння 30 жовтня 2022 року (2 ноября 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('CAv4eluus2E', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [149] Видео: </span>Служіння 23 жовтня 2022 року (23 октября 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('4XVyZdFuR2Q', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [148] Видео: </span>Служіння 16 жовтня 2022 року (16 октября 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('H1J8NUKUYgQ', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [147] Видео: </span>Служіння 9 жовтня 2022 року (9 октября 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('UDxQ-4YW5qw', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [146] Видео: </span>Служіння 2 жовтня 2022 року (3 октября 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('bwezfR5rQPw', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [145] Видео: </span>Служіння 18 вересня 2022 року (20 сентября 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('Yy8gBrt8os0', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [144] Видео: </span>Рукопокладання братів на дияконське служіння. Фурта Василь (м.Ірпінь) 11 вересня 2022 року (12 сентября 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('0NWoNqPP-Jk', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [143] Видео: </span>Служіння 11 вересня 2022 року (11 сентября 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('vmPuPerDwow', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [142] Видео: </span>Служіння 4 вересня 2022 року (4 сентября 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('3B0imTqWbOA', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [141] Видео: </span>Служіння 21 серпня 2022 року (22 августа 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('gzAkGZfHpys', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [140] Видео: </span>Вечірнє служіння 19 серпня 2022 року (20 августа 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('Rb0KDxyBeIE', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [139] Видео: </span>Служіння 17 серпня 2022 року (18 августа 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('EjHmds45Wfs', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [138] Видео: </span>Служіння 14 серпня 2022 року (14 августа 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('E8vW5aCa7NI', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [137] Видео: </span>Служіння 7 серпня 2022 року (8 августа 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('jI7Ka7QGahY', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [136] Видео: </span>Служіння 10 липня 2022 року (4 августа 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('zp3fNY7WY-c', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [135] Видео: </span>Служіння 06 липня 2022 року (4 августа 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('crCgjUaSWkM', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [134] Видео: </span>Служіння 3 серпня 2022 року (4 августа 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('0l6ManXUMg4', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [133] Видео: </span>Служіння 29 червня 2022 року (1 августа 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('YvClOiDYD-o', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [132] Видео: </span>Служіння 26 червня 2022 (1 августа 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('6X1JTRGW6FI', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [131] Видео: </span>Служіння 17 липня 2022 року (1 августа 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('FP_uBoRaLZU', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [130] Видео: </span>Служіння 31 липня 2022 року (31 июля 2022 г.)</p>
+<p class="videoLink" onclick="changeVideo('UokaKZgwEWk', 1, this)"><img src="images/youtube_icon.png" alt="Иконка YouTube" width="20" height="20"><span class="videoNumber"> [129] Видео: </span>Служіння 27 липня 2022 року (28 июля 2022 г.)</p>
+
+
+		    <div id="player1" class="player-container">
+                       <iframe class="player" src="" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- video2 -->
+<section id="video2" class="parallax-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10 col-sm-12">
+                <div class="content">
+<img src="images/video2-icon.jpg" alt="Иконка video2" width="210" height="120" class="video-icon">
+
+                    <h5> текст </h5>
+                    <h1>[ текст ]</h1>
+
+
+
+
+                   <div id="player2" class="player-container">
+                        <iframe class="player" src="" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<script src="js/smoothscroll.js"></script>
+<script src="js/modernizr.custom.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var navbarCollapse = document.querySelector('.navbar-collapse');
+
+    document.addEventListener('click', function(event) {
+        var clickedElement = event.target;
+        var isNavbarToggle = clickedElement.closest('.navbar-toggle');
+        var isNavbarNavItem = clickedElement.closest('.navbar-nav');
+
+        if (!isNavbarToggle && !isNavbarNavItem) {
+            navbarCollapse.classList.remove('in');
+        }
+    });
+
+    // Добавим также обработчик события для закрытия меню при клике на ссылку в меню
+    var navbarLinks = document.querySelectorAll('.navbar-nav > li > a');
+    navbarLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            navbarCollapse.classList.remove('in');
+        });
+    });
+});
+
+
+function changeVideo(videoId, playerId, selectedElement) {
+    var player = document.querySelector('#player' + playerId + ' .player');
+    player.src = 'https://www.youtube.com/embed/' + videoId;
+    stopOtherPlayers(playerId);
+    // Добавляем класс к выбранной строке и удаляем его из предыдущей выбранной строки
+    var previousSelectedElement = document.querySelector('.videoLink.selected-video');
+    if (previousSelectedElement) {
+        previousSelectedElement.classList.remove('selected-video');
+    }
+    selectedElement.classList.add('selected-video');
+    
+    // Прокручиваем видеоплеер в центр окна браузера
+    player.parentNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+
+function stopOtherPlayers(playerId) {
+    var allPlayers = document.querySelectorAll('.player');
+    allPlayers.forEach(function(player) {
+        var playerIdString = player.parentNode.id.replace('player', '');
+        if (playerIdString !== playerId.toString()) {
+            player.src = '';
+        }
+    });
+}
+
+
+
+
+</script>
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Свяжитесь с нами</h4>
+                <p>Наш адрес: г. Название, ул. Улица, дом №</p>
+                <p>Email: example@example.com</p>
+                <p>Телефон: +1234567890</p>
+            </div>
+            <div class="col-md-6">
+                <h4>Подписывайтесь на нас</h4>
+                <ul class="social-icons">
+                    <li><a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://twitter.com"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+
+
+</body>
+</html>
