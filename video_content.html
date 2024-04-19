@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/tooplate-style.css"> 
 
+
 <style>
 
 
@@ -359,10 +360,16 @@
 </section>
 
 
-<script src="js/modernizr.custom.js"></script>
-    <!-- Подключение Bootstrap JS и Font Awesome -->
+
+
+   <script src="js/modernizr.custom.js"></script>
+   <!-- Подключение Bootstrap JS и Font Awesome -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="js/smoothscroll.js"></script>
+
+
 <script>    
 // Активация перемещения по галерее
 document.addEventListener('DOMContentLoaded', function() {
@@ -370,39 +377,32 @@ document.addEventListener('DOMContentLoaded', function() {
     const arrowLeft = document.querySelector('.arrow-left');
     const arrowRight = document.querySelector('.arrow-right');
 
-    arrowLeft.addEventListener('click', function() {
-        smoothScroll(galleryWrapper, -200, 800);
-    });
-
-    arrowRight.addEventListener('click', function() {
-        smoothScroll(galleryWrapper, 200, 800);
-    });
+    galleryWrapper.addEventListener('scroll', handleGalleryScroll);
+    arrowLeft.addEventListener('click', scrollGalleryLeft);
+    arrowRight.addEventListener('click', scrollGalleryRight);
 });
 
-function smoothScroll(element, distance, duration) {
-    const start = element.scrollLeft;
-    const startTime = performance.now();
-
-    function step(timestamp) {
-        const currentTime = timestamp - startTime;
-        const scrollAmount = easeInOutQuad(currentTime / duration) * distance;
-
-        element.scrollLeft = start + scrollAmount;
-
-        if (currentTime < duration) {
-            requestAnimationFrame(step);
-        } else {
-            element.scrollLeft += distance;
-        }
-    }
-
-    function easeInOutQuad(t) {
-        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-    }
-
-    requestAnimationFrame(step);
+function handleGalleryScroll(event) {
+    // Ваш текущий код для обработки прокрутки
 }
-    
+
+function scrollGalleryLeft() {
+    const galleryWrapper = document.querySelector('.photo-gallery-wrapper');
+    galleryWrapper.scrollBy({
+        left: -200, // или любое другое значение для прокрутки
+        behavior: 'smooth'
+    });
+}
+
+function scrollGalleryRight() {
+    const galleryWrapper = document.querySelector('.photo-gallery-wrapper');
+    galleryWrapper.scrollBy({
+        left: 200, // или любое другое значение для прокрутки
+        behavior: 'smooth'
+    });
+}
+
+
 </script> 
 
 
