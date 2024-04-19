@@ -358,41 +358,8 @@
     </div>
 </section>
 
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "inksv@ukr.net";
-    $subject = $_POST["subject"];
-    $message = $_POST["message"];
-    $headers = "From: " . $_POST["email"];
-
-    if (mail($to, $subject, $message, $headers)) {
-        echo "<p>Письмо успешно отправлено</p>";
-    } else {
-        echo "<p>Ошибка при отправке письма</p>";
-    }
-}
-?>
-
-<form action="" method="post">
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br>
-
-    <label for="subject">Тема:</label>
-    <input type="text" id="subject" name="subject" required><br>
-
-    <label for="message">Сообщение:</label>
-    <textarea id="message" name="message" required></textarea><br>
-
-    <input type="submit" value="Отправить">
-</form>
-
-
-
 
 <script src="js/modernizr.custom.js"></script>
-
-
-
     <!-- Подключение Bootstrap JS и Font Awesome -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -403,32 +370,39 @@ document.addEventListener('DOMContentLoaded', function() {
     const arrowLeft = document.querySelector('.arrow-left');
     const arrowRight = document.querySelector('.arrow-right');
 
-    galleryWrapper.addEventListener('scroll', handleGalleryScroll);
-    arrowLeft.addEventListener('click', scrollGalleryLeft);
-    arrowRight.addEventListener('click', scrollGalleryRight);
+    arrowLeft.addEventListener('click', function() {
+        smoothScroll(galleryWrapper, -200, 800);
+    });
+
+    arrowRight.addEventListener('click', function() {
+        smoothScroll(galleryWrapper, 200, 800);
+    });
 });
 
-function handleGalleryScroll(event) {
-    // Ваш текущий код для обработки прокрутки
+function smoothScroll(element, distance, duration) {
+    const start = element.scrollLeft;
+    const startTime = performance.now();
+
+    function step(timestamp) {
+        const currentTime = timestamp - startTime;
+        const scrollAmount = easeInOutQuad(currentTime / duration) * distance;
+
+        element.scrollLeft = start + scrollAmount;
+
+        if (currentTime < duration) {
+            requestAnimationFrame(step);
+        } else {
+            element.scrollLeft += distance;
+        }
+    }
+
+    function easeInOutQuad(t) {
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+    }
+
+    requestAnimationFrame(step);
 }
-
-function scrollGalleryLeft() {
-    const galleryWrapper = document.querySelector('.photo-gallery-wrapper');
-    galleryWrapper.scrollBy({
-        left: -200, // или любое другое значение для прокрутки
-        behavior: 'smooth'
-    });
-}
-
-function scrollGalleryRight() {
-    const galleryWrapper = document.querySelector('.photo-gallery-wrapper');
-    galleryWrapper.scrollBy({
-        left: 200, // или любое другое значение для прокрутки
-        behavior: 'smooth'
-    });
-}
-
-
+    
 </script> 
 
 
